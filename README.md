@@ -58,7 +58,7 @@ Explore my **personal portfolio website**, where creativity, technical expertise
 
 ### 🔗 **Quick Links**:
 
-- 🌐 **[Visit My Portfolio](https://https://dakshgoti14.github.io/)**  
+- 🌐 **[Visit My Portfolio](https://dakshgoti14.github.io)**  
 - 📂 **[Explore My GitHub Repos](https://github.com/dakshgoti14)**  
 - ✉️ **[Contact Me](mailto:your.dakshngoti6071@gmail.com)**  
 
