@@ -25,7 +25,7 @@ Explore my **personal portfolio website**, where creativity, technical expertise
 
 ### 🖼️ **Preview of My Latest Project**
 
-![Portfolio Preview](https://via.placeholder.com/800x400.png](https://your-animated-image-link.com/animated-image.gif)](https://images.squarespace-cdn.com/content/v1/5769fc401b631bab1addb2ab/1541580611624-TE64QGKRJG8SWAIUS7NS/ke17ZwdGBToddI8pDm48kPoswlzjSVMM-SxOp7CV59BZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI6FXy8c9PWtBlqAVlUS5izpdcIXDZqDYvprRqZ29Pw0o/coding-freak.gif))  
+![Portfolio Preview]()  
 *Above: A sneak peek of my latest project - an interactive dashboard built with **React** and **D3.js**, visualizing real-time data.*
 
 ---
