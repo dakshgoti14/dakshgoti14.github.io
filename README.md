@@ -16,7 +16,7 @@ Explore my **personal portfolio website**, where creativity, technical expertise
 
 | 🎯 [Project Gallery](#) | Explore a collection of my best work, featuring **React**, **Node.js**, **Python**, and more. |
 | :-- | :-- |
-| 📂 [Source Code](https://github.com/yourusername) | Browse through the source code of my portfolio and other projects hosted on GitHub. |
+| 📂 [Source Code](https://github.com/dakshgoti14) | Browse through the source code of my portfolio and other projects hosted on GitHub. |
 | 🛠️ [Tech Stack](#) | Discover the tools, libraries, and frameworks that power my development process. |
 | ✨ [Design & Animation](#) | See the magic of CSS, JavaScript, and creative animations in action. |
 | 💡 [Automation & API Integrations](#) | Learn how automation and API-driven data bring efficiency to my workflows. |
@@ -25,7 +25,7 @@ Explore my **personal portfolio website**, where creativity, technical expertise
 
 ### 🖼️ **Preview of My Latest Project**
 
-![Portfolio Preview](https://via.placeholder.com/800x400.png)  
+![Portfolio Preview]([https://via.placeholder.com/800x400.png](https://your-animated-image-link.com/animated-image.gif))  
 *Above: A sneak peek of my latest project - an interactive dashboard built with **React** and **D3.js**, visualizing real-time data.*
 
 ---
