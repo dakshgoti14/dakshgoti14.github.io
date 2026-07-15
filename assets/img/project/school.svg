@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Smart School System">
+  <defs>
+    <linearGradient id="h-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1e3c"/><stop offset="0.5" stop-color="#1c3f70"/><stop offset="1" stop-color="#2f63a8"/></linearGradient>
+    <linearGradient id="h-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070f1e" stop-opacity="0"/><stop offset="1" stop-color="#070f1e" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="h-build" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.07"/></linearGradient>
+    <linearGradient id="h-shirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb26b"/><stop offset="0.7" stop-color="#f2913c"/><stop offset="1" stop-color="#d97420"/></linearGradient>
+    <linearGradient id="h-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#f2c199"/></linearGradient>
+    <radialGradient id="h-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#7ab0ff" stop-opacity="0.5"/><stop offset="1" stop-color="#7ab0ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="h-spot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <pattern id="h-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.05"/></pattern>
+    <filter id="h-soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#070f1e" flood-opacity="0.42"/></filter>
+    <filter id="h-soft2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#070f1e" flood-opacity="0.35"/></filter>
+    <filter id="h-blur"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="640" height="420" fill="url(#h-bg)"/>
+  <circle cx="440" cy="150" r="170" fill="url(#h-glow)" filter="url(#h-blur)"/>
+  <circle cx="110" cy="360" r="120" fill="url(#h-glow)" filter="url(#h-blur)" opacity="0.55"/>
+  <rect width="640" height="420" fill="url(#h-grid)"/>
+  <rect y="300" width="640" height="120" fill="url(#h-floor)"/>
+  <ellipse cx="150" cy="250" rx="140" ry="150" fill="url(#h-spot)"/>
+  <g fill="#bcd8ff"><circle cx="330" cy="60" r="2.6" opacity="0.7"/><circle cx="600" cy="300" r="2.2" opacity="0.6"/><circle cx="60" cy="150" r="2" opacity="0.5"/></g>
+
+  <!-- ===== School building ===== -->
+  <g transform="translate(348,146)" filter="url(#h-soft)">
+    <rect x="0" y="60" width="240" height="130" rx="10" fill="url(#h-build)" stroke="#7ab0ff" stroke-opacity="0.3"/>
+    <!-- roof / pediment -->
+    <polygon points="120,4 236,60 4,60" fill="url(#h-build)" stroke="#7ab0ff" stroke-opacity="0.35"/>
+    <polygon points="120,20 210,60 30,60" fill="#7ab0ff" opacity="0.18"/>
+    <!-- clock -->
+    <circle cx="120" cy="42" r="11" fill="#ffffff" opacity="0.85"/><path d="M120,42 L120,36 M120,42 L125,45" stroke="#1c3f70" stroke-width="2" stroke-linecap="round"/>
+    <!-- columns -->
+    <g fill="#ffffff" opacity="0.14"><rect x="26" y="72" width="16" height="106" rx="4"/><rect x="66" y="72" width="16" height="106" rx="4"/><rect x="158" y="72" width="16" height="106" rx="4"/><rect x="198" y="72" width="16" height="106" rx="4"/></g>
+    <!-- door -->
+    <rect x="102" y="122" width="36" height="68" rx="6" fill="#2f63a8"/><rect x="102" y="122" width="36" height="68" rx="6" fill="none" stroke="#9cc2ff" stroke-opacity="0.4"/>
+    <line x1="120" y1="122" x2="120" y2="190" stroke="#9cc2ff" stroke-opacity="0.4"/>
+    <!-- steps -->
+    <rect x="86" y="190" width="68" height="6" rx="3" fill="#ffffff" opacity="0.18"/><rect x="76" y="196" width="88" height="6" rx="3" fill="#ffffff" opacity="0.12"/>
+    <!-- flag -->
+    <line x1="120" y1="4" x2="120" y2="-22" stroke="#cdd8e6" stroke-width="2.5"/><path d="M120,-22 l22,6 l-22,8 Z" fill="#ffd166"/>
+  </g>
+
+  <ellipse cx="170" cy="390" rx="110" ry="14" fill="#070f1e" opacity="0.4"/>
+
+  <!-- ===== Student (grad cap) ===== -->
+  <g filter="url(#h-soft)">
+    <rect x="144" y="318" width="21" height="72" rx="9" fill="#1c2a44"/>
+    <rect x="177" y="318" width="21" height="72" rx="9" fill="#243a5c"/>
+    <path d="M132,214 C132,199 144,190 170,190 C196,190 208,199 208,214 L215,326 C215,335 207,341 198,341 L142,341 C133,341 125,335 125,326 Z" fill="url(#h-shirt)"/>
+    <path d="M190,193 C202,197 208,205 208,214 L215,326 C215,335 207,341 198,341 L180,341 Z" fill="#d97420" opacity="0.5"/>
+    <path d="M170,190 L156,214 L170,230 L184,214 Z" fill="#d97420"/>
+    <!-- arm raised waving -->
+    <path d="M206,222 C232,206 250,190 260,172" fill="none" stroke="url(#h-shirt)" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="263" cy="166" r="11" fill="url(#h-skin)"/>
+    <path d="M134,224 C123,250 123,286 135,312" fill="none" stroke="url(#h-shirt)" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="135" cy="316" r="10" fill="url(#h-skin)"/>
+    <rect x="161" y="168" width="18" height="26" rx="7" fill="#f2c199"/>
+    <circle cx="170" cy="150" r="30" fill="url(#h-skin)"/>
+    <!-- short hair under cap -->
+    <path d="M141,156 C140,140 150,128 170,128 C190,128 200,140 199,156 C193,146 184,142 170,142 C156,142 148,146 141,156 Z" fill="#2b1d13"/>
+    <circle cx="161" cy="151" r="2.8" fill="#3a2a20"/><circle cx="179" cy="151" r="2.8" fill="#3a2a20"/>
+    <path d="M163,162 q7,5 13,0" fill="none" stroke="#c07a4f" stroke-width="2.3" stroke-linecap="round"/>
+    <!-- graduation cap -->
+    <polygon points="170,104 214,120 170,136 126,120" fill="#161b28"/>
+    <path d="M148,127 L148,142 C148,150 192,150 192,142 L192,127" fill="#161b28"/>
+    <circle cx="170" cy="120" r="4" fill="#ffd166"/>
+    <path d="M170,120 L206,112 L206,136" stroke="#ffd166" stroke-width="2.4" fill="none"/><circle cx="206" cy="138" r="4" fill="#ffd166"/>
+  </g>
+
+  <text x="40" y="58" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="30" fill="#ffffff">Smart School System</text>
+  <rect x="40" y="68" width="54" height="3" rx="1.5" fill="#7ab0ff"/>
+  <text x="40" y="92" font-family="Poppins,Arial,sans-serif" font-size="14.5" fill="#c3d8f5">School Management Platform</text>
+</svg>

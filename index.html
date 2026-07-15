@@ -13,9 +13,21 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Personal Portfolio</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
+  <title>Daksh Goti — AI Software Engineer</title>
+  <meta name="description" content="Daksh Goti — AI Software Engineer specializing in Generative AI, LLMs, RAG, FastAPI microservices, and cloud-native full-stack development with Python, Java, React, and AWS.">
+  <meta name="keywords" content="Daksh Goti, AI Software Engineer, Generative AI, LLM, RAG, LangChain, FastAPI, Python, Java, React, Next.js, AWS, Microservices, Kafka, Kubernetes, Portfolio">
+  <meta name="author" content="Daksh Goti">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Daksh Goti — AI Software Engineer">
+  <meta property="og:description" content="Generative AI, LLMs & RAG, FastAPI microservices, and cloud-native full-stack engineering. 3+ years building scalable enterprise solutions.">
+  <meta property="og:image" content="https://dakshgoti14.github.io/assets/img/DAKSHGOTI.jpg">
+  <meta property="og:url" content="https://dakshgoti14.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daksh Goti — AI Software Engineer">
+  <meta name="twitter:description" content="Generative AI, LLMs & RAG, FastAPI microservices, and cloud-native full-stack engineering.">
+  <meta name="twitter:image" content="https://dakshgoti14.github.io/assets/img/DAKSHGOTI.jpg">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -30,6 +42,242 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Custom polish -->
+  <style>
+    .filter-featured .portfolio-wrap {
+      position: relative;
+      border: 2px solid #89CFF0;
+      border-radius: 6px;
+      box-shadow: 0 6px 20px rgba(137, 207, 240, 0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .filter-featured .portfolio-wrap:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(137, 207, 240, 0.4);
+    }
+    .filter-featured .portfolio-wrap::before {
+      content: "★ Featured";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 3;
+      background: #89CFF0;
+      color: #09203a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+    #portfolio-flters li:hover,
+    #portfolio-flters li.filter-active { color: #89CFF0; }
+    .skill-logos img {
+      height: 52px;
+      width: auto;
+      margin: 12px 18px;
+      vertical-align: middle;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+    }
+    .skill-logos img:hover { transform: scale(1.18) translateY(-3px); }
+
+    /* ===== Global polish ===== */
+    html { scroll-behavior: smooth; }
+    * { scroll-margin-top: 20px; }
+
+    /* ===== Section title (fix overlap + make impressive) ===== */
+    .section-title { text-align: center; padding-top: 16px; margin-bottom: 34px; }
+    .section-title h2 {
+      position: relative;
+      display: inline-block;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+      padding-bottom: 18px;
+      margin: 0;
+    }
+    .section-title h2::before { content: none; }        /* kill template's inline line */
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+      bottom: 0;
+      width: 70px; height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #89CFF0, #12d640, #89CFF0);
+      background-size: 200% 100%;
+      animation: accentShift 3.5s ease infinite;
+    }
+    @keyframes accentShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+    /* ===== Entrance animations (triggered when a section opens) ===== */
+    @keyframes secFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes secTitleIn { from { opacity: 0; transform: translateY(-16px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+    section.section-show .section-title { animation: secTitleIn 0.6s cubic-bezier(.2,.7,.3,1) both; }
+    section.section-show .portfolio-item,
+    section.section-show .icon-box,
+    section.section-show .edu-card,
+    section.section-show .info-box,
+    section.section-show .about-me .content,
+    section.section-show .about-me > .row > div { animation: secFadeUp 0.6s cubic-bezier(.2,.7,.3,1) both; }
+
+    /* Stagger children as they appear */
+    section.section-show .portfolio-item:nth-child(1), section.section-show .icon-box:nth-child(1), section.section-show .interests .row > div:nth-child(1) { animation-delay: 0.06s; }
+    section.section-show .portfolio-item:nth-child(2), section.section-show .icon-box:nth-child(2), section.section-show .interests .row > div:nth-child(2) { animation-delay: 0.14s; }
+    section.section-show .portfolio-item:nth-child(3), section.section-show .icon-box:nth-child(3), section.section-show .interests .row > div:nth-child(3) { animation-delay: 0.22s; }
+    section.section-show .portfolio-item:nth-child(4), section.section-show .icon-box:nth-child(4), section.section-show .interests .row > div:nth-child(4) { animation-delay: 0.30s; }
+    section.section-show .portfolio-item:nth-child(5), section.section-show .icon-box:nth-child(5), section.section-show .interests .row > div:nth-child(5) { animation-delay: 0.38s; }
+    section.section-show .portfolio-item:nth-child(6), section.section-show .icon-box:nth-child(6), section.section-show .interests .row > div:nth-child(6) { animation-delay: 0.46s; }
+    section.section-show .portfolio-item:nth-child(7), section.section-show .icon-box:nth-child(7), section.section-show .interests .row > div:nth-child(7) { animation-delay: 0.54s; }
+    section.section-show .portfolio-item:nth-child(8), section.section-show .icon-box:nth-child(8), section.section-show .interests .row > div:nth-child(8) { animation-delay: 0.62s; }
+    section.section-show .portfolio-item:nth-child(n+9) { animation-delay: 0.70s; }
+
+    /* Interests icons gently float */
+    .about .interests .icon-box i { animation: floatY 5s ease-in-out infinite; }
+
+    /* ===== Filter buttons (readable active pill) ===== */
+    #portfolio-flters li {
+      cursor: pointer;
+      padding: 7px 18px;
+      margin: 0 4px 10px;
+      border-radius: 22px;
+      font-size: 14px;
+      transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+    #portfolio-flters li:hover { color: #89CFF0; }
+    #portfolio-flters li.filter-active {
+      background: linear-gradient(90deg, #89CFF0, #12d640);
+      color: #08131f !important;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(137,207,240,0.35);
+    }
+
+    /* Extra spacing between project rows now that inline titles are gone */
+    .portfolio .portfolio-item { margin-bottom: 26px; }
+
+    /* ===== Animated hero background + entrance ===== */
+    #header.header-tops { position: relative; overflow: hidden; }
+    #header.header-tops::before {
+      content: "";
+      position: absolute; inset: -20% -20% -20% -20%;
+      z-index: -1;
+      background:
+        radial-gradient(closest-side, rgba(137,207,240,0.16), transparent) 20% 30%/45% 45% no-repeat,
+        radial-gradient(closest-side, rgba(18,214,64,0.12), transparent) 80% 70%/50% 50% no-repeat,
+        radial-gradient(closest-side, rgba(137,207,240,0.10), transparent) 60% 20%/40% 40% no-repeat;
+      animation: heroBlobs 16s ease-in-out infinite alternate;
+    }
+    @keyframes heroBlobs {
+      0%   { transform: translate3d(0,0,0) scale(1); }
+      50%  { transform: translate3d(2%, -2%, 0) scale(1.08); }
+      100% { transform: translate3d(-2%, 2%, 0) scale(1.04); }
+    }
+    /* Hero content entrance (only on the full landing, not the collapsed top bar) */
+    #header:not(.header-top) .container > h1 { animation: secFadeUp 0.7s cubic-bezier(.2,.7,.3,1) both; }
+    #header:not(.header-top) .container > h2 { animation: secFadeUp 0.7s cubic-bezier(.2,.7,.3,1) both; animation-delay: 0.15s; }
+    #header:not(.header-top) .nav-menu    { animation: secFadeUp 0.7s cubic-bezier(.2,.7,.3,1) both; animation-delay: 0.30s; }
+    #header:not(.header-top) .social-links{ animation: secFadeUp 0.7s cubic-bezier(.2,.7,.3,1) both; animation-delay: 0.45s; }
+
+    /* Nav link underline sweep */
+    .nav-menu ul a { position: relative; }
+    .nav-menu ul a::after {
+      content: ""; position: absolute; left: 0; bottom: -4px;
+      width: 0; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, #89CFF0, #12d640);
+      transition: width 0.3s ease;
+    }
+    .nav-menu ul a:hover::after, .nav-menu ul .active > a::after { width: 100%; }
+
+    /* Card hover lift for services/interests/education/experience/skills */
+    .services .icon-box, .about .icon-box {
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      border: 1px solid rgba(137,207,240,0.08);
+    }
+    .services .icon-box:hover, .about .icon-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+      border-color: rgba(137,207,240,0.35);
+    }
+
+    /* Interests icon pop */
+    .about .icon-box i { transition: transform 0.3s ease; }
+    .about .icon-box:hover i { transform: scale(1.15) rotate(-6deg); }
+
+    /* Portfolio card polish */
+    .portfolio .portfolio-wrap {
+      border-radius: 10px; overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .portfolio .portfolio-wrap:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(0,0,0,0.35); }
+    .portfolio .portfolio-wrap img { transition: transform 0.5s ease; }
+    .portfolio .portfolio-wrap:hover img { transform: scale(1.06); }
+
+    /* Education cards */
+    .edu-card { border-radius: 14px; }
+    .edu-card img { border-radius: 10px; width: 100%; object-fit: cover; }
+
+    /* Experience list markers */
+    #experience ul li { transition: transform 0.2s ease; }
+    #experience ul li:hover { transform: translateX(4px); }
+
+    /* Gradient name in header */
+    #header h1 a {
+      background: linear-gradient(90deg, #ffffff 0%, #89CFF0 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .typing { text-shadow: 0 0 18px rgba(137,207,240,0.55); }
+
+    /* Social links hover */
+    .social-links a { transition: transform 0.25s ease, color 0.25s ease; }
+    .social-links a:hover { transform: translateY(-3px) scale(1.12); }
+
+    /* Scroll-to-top button */
+    .back-to-top {
+      position: fixed; right: 20px; bottom: 20px; z-index: 999;
+      width: 46px; height: 46px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #89CFF0, #12d640);
+      color: #08131f; font-size: 22px; cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      opacity: 0; visibility: hidden; transform: translateY(12px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      border: none;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { transform: translateY(-3px) scale(1.08); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 992px) {
+      .skill-logos img { height: 44px; margin: 10px 14px; }
+    }
+    @media (max-width: 768px) {
+      #header h1 { font-size: 32px; }
+      #header h2 { font-size: 18px; }
+      .section-title h2 { font-size: 26px; }
+      .skill-logos img { height: 38px; margin: 9px 11px; }
+      .skill-logos { text-align: center !important; }
+      .services .icon-box, .about .icon-box { text-align: center; }
+      .edu-card { margin-bottom: 20px; }
+      .back-to-top { right: 14px; bottom: 14px; width: 42px; height: 42px; }
+    }
+    @media (max-width: 480px) {
+      #header h1 { font-size: 27px; }
+      .skill-logos img { height: 33px; margin: 8px 9px; }
+      .portfolio #portfolio-flters li { padding: 6px 10px; font-size: 13px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
 
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -82,8 +330,8 @@
       </nav><!-- .nav-menu -->
 
       <div class="social-links">
-          <a href="https://www.linkedin.com/in/daksh-goti" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/dakshngoti6071@gmail.com" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/dakshgoti" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/dakshgoti14" target="_blank" class="github"><i class="bx bxl-github"></i></a>
           <a href="mailto:daksh.g@myhotmail.net" target="_blank" class="google"><i class="bx bxl-google"></i></a>
 
       </div>
@@ -147,44 +395,44 @@
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
           <div class="icon-box">
-            <i class="ri-database-2-line" style="color: #5578ff;"></i>
-            <h3>AI/ ML</h3>
+            <i class="ri-robot-line" style="color: #5578ff;"></i>
+            <h3>Generative AI</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
           <div class="icon-box">
-            <i class="ri-camera-3-line" style="color: #e80368;"></i>
-            <h3>Gen Ai </h3>
+            <i class="ri-search-eye-line" style="color: #e80368;"></i>
+            <h3>LLMs &amp; RAG</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
           <div class="icon-box">
-            <i class="ri-smartphone-line" style="color: #89CFF0;"></i>
-            <h3>Distributed System</h3>
+            <i class="ri-share-forward-line" style="color: #89CFF0;"></i>
+            <h3>Distributed Systems</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-code-s-slash-fill" style="color: #89CFF0;"></i>
-            <h3>Cloud Development</h3>
+            <i class="ri-cloud-line" style="color: #89CFF0;"></i>
+            <h3>Cloud &amp; Serverless</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-bar-chart-box-line" style="color: #f1081f;"></i>
-            <h3>Visualization</h3>
+            <i class="ri-terminal-box-line" style="color: #f1081f;"></i>
+            <h3>Microservices &amp; APIs</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-file-list-3-line" style="color: #47aeff;"></i>
-            <h3>Devops</h3>
+            <i class="ri-git-merge-line" style="color: #47aeff;"></i>
+            <h3>DevOps &amp; CI/CD</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-image-line" style="color: #ffc107;"></i>
-            <h3>Image Processing</h3>
+            <i class="ri-code-s-slash-line" style="color: #ffc107;"></i>
+            <h3>Full-Stack Development</h3>
           </div>
         </div>
       </div>
@@ -200,37 +448,33 @@
       <div class="section-title">
         <h2>Education</h2>
       </div>
-      <div class="row">
-        <div class="col-lg-12" data-aos="fade-up" style="display: inline-block;">
+      <div class="row justify-content-center edu-row">
 
-
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/CSULB.jpg" class="img-fluid" alt="">
-              <!-- <h4 style="text-align:left;"><a href="https://www.csulb.edu/" target="_blank" style="color:#12d640">Arizona State University</a><br> </h4> -->
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>MS in Computer Science</em></p>
-              <h5 style="text-align:left;padding: 0px 10px;">Aug 2023 - May 2025</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Algorithm Design</li>
-                <li>Cloud Computing</li>
-                <li>Distributed System</li>
-              </ul>
-            </div>
-            <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding:0px 0px;padding-bottom: 5px;display: inline-block;">
-              <img src="assets/img/education/charusat.png" class="img-fluid" alt="">
-              <p style="text-align:left;color:#fff;padding: 5px 10px;"><em>B.Tech. in Computer Science Engineering</em></p>
-              <h5 style="text-align:left;padding: 0px 10px;">July 2020 - May 2023</h5>
-              <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
-              <ul style="text-align:left;color:#fff;">
-                <li>Database Management Systems</li>
-                <li>Algorithms &amp; Optimization for Big Data</li>
-                <li>Machine Learning</li>
-              </ul>
-            </div>
-
+          <div class="col-lg-5 col-md-6 mt-4 mt-md-0 icon-box edu-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/education/CSULB.jpg" class="img-fluid" alt="California State University, Long Beach">
+            <p style="text-align:left;color:#fff;padding: 8px 10px 0;"><em>MS in Computer Science</em></p>
+            <h5 style="text-align:left;padding: 0px 10px;">Aug 2023 - May 2025</h5>
+            <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
+            <ul style="text-align:left;color:#fff;">
+              <li>Algorithm Design</li>
+              <li>Cloud Computing</li>
+              <li>Distributed System</li>
+            </ul>
           </div>
-        </div>
+          <div class="col-lg-5 col-md-6 mt-4 mt-md-0 icon-box edu-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/education/charusat.png" class="img-fluid" alt="Charotar University of Science and Technology">
+            <p style="text-align:left;color:#fff;padding: 8px 10px 0;"><em>B.Tech. in Computer Science Engineering</em></p>
+            <h5 style="text-align:left;padding: 0px 10px;">July 2020 - Jun 2023</h5>
+            <h6 style="text-align:left;color:#fff;padding: 0px 10px;">Relevant Coursework</h6>
+            <ul style="text-align:left;color:#fff;">
+              <li>Database Management Systems</li>
+              <li>Algorithms &amp; Optimization for Big Data</li>
+              <li>Machine Learning</li>
+            </ul>
+          </div>
+
       </div>
+    </div><!-- End Education container -->
 
 
     <div class="portfolio">
@@ -239,11 +483,11 @@
         <h2>Online Certification</h2>
       </div>
 
-      <div class="row portfolio-container" style="position: relative; height: 437.75px;">
+      <div class="row portfolio-container">
 
-         <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="position: absolute; left: 0px; top: 0px;">
+         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
-            <img src="assets/img/certification/dla.png" class="img-fluid" alt="">
+            <img src="assets/img/certification/dla.png" class="img-fluid" alt="Artificial Intelligence certification">
             <div class="portfolio-info">
               <h4>Artificial intelligence</h4>
               <div class="portfolio-links">
@@ -253,9 +497,9 @@
            </div>
           </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 370px; top: 218.875px;">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project">
           <div class="portfolio-wrap">
-            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="">
+            <img src="assets/img/certification/ibm.jpg" class="img-fluid" alt="IBM Cloud Pak certification">
             <div class="portfolio-info">
               <h4>Cloud Pak for Integration Essentials</h4>
               <div class="portfolio-links">
@@ -266,9 +510,9 @@
         </div>
 
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-project" style="position: absolute; left: 740px; top: 218.875px;">
+        <div class="col-lg-4 col-md-6 portfolio-item filter-project">
           <div class="portfolio-wrap">
-            <img src="assets/img/certification/AWS.png" class="img-fluid" alt="">
+            <img src="assets/img/certification/AWS.png" class="img-fluid" alt="AWS certification">
             <div class="portfolio-info">
               <h4>AWS Certified Cloud Practitioner</h4>
               <div class="portfolio-links">
@@ -355,6 +599,7 @@ rates by 22% and reducing production issues.</li>
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-featured">Featured / AI</li>
             <li data-filter=".filter-app">Web-App</li>
             <li data-filter=".filter-project">Project</li>
           </ul>
@@ -363,12 +608,67 @@ rates by 22% and reducing production issues.</li>
 
       <div class="row portfolio-container">
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Disease Prediction</h4></center>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-featured filter-app">
           <div class="portfolio-wrap">
-            <img src="assets/img/project/disease.png" class="img-fluid" alt="">
+            <img src="assets/img/project/medinsight.svg" class="img-fluid" alt="MedInsight AI-enabled healthcare dashboard">
             <div class="portfolio-info">
-              <h4>Disease Prediction and Doctor Recoomandation</h4>              
+              <h4>MedInsight — AI Healthcare Dashboard</h4>
+              <p style="color:#fff;font-size:13px;">GenAI clinical insights · FastAPI · 50K+ records/day</p>
+              <div class="portfolio-links">
+                <a href="projects/medinsight.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+                <a href="https://github.com/dakshgoti14" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-featured filter-project">
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/orderstream.svg" class="img-fluid" alt="OrderStream distributed order management system">
+            <div class="portfolio-info">
+              <h4>OrderStream — Distributed System</h4>
+              <p style="color:#fff;font-size:13px;">Kafka · Spring Boot · 200K+ orders/day · &lt;200ms</p>
+              <div class="portfolio-links">
+                <a href="projects/orderstream.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+                <a href="https://github.com/dakshgoti14" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-featured filter-app">
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/documind.svg" class="img-fluid" alt="DocuMind RAG document intelligence platform">
+            <div class="portfolio-info">
+              <h4>DocuMind — RAG Document AI</h4>
+              <p style="color:#fff;font-size:13px;">LangChain · pgvector · 92% answer relevance</p>
+              <div class="portfolio-links">
+                <a href="projects/documind.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+                <a href="https://github.com/dakshgoti14" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-featured filter-project">
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/streamguard.svg" class="img-fluid" alt="StreamGuard real-time fraud detection pipeline">
+            <div class="portfolio-info">
+              <h4>StreamGuard — Fraud Detection</h4>
+              <p style="color:#fff;font-size:13px;">Kafka + ML · 1M+ events/hr · 98% precision</p>
+              <div class="portfolio-links">
+                <a href="projects/streamguard.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+                <a href="https://github.com/dakshgoti14" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="assets/img/project/disease.svg" class="img-fluid" alt="Disease Prediction and Doctor Recommendation">
+            <div class="portfolio-info">
+              <h4>Disease Prediction and Doctor Recommendation</h4>
               <div class="portfolio-links">
                 <a href="projects/disease.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
               </div>
@@ -377,9 +677,8 @@ rates by 22% and reducing production issues.</li>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Sales Prediction</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/sales.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/project/sales.svg" class="img-fluid" alt="Sales Prediction">
             <div class="portfolio-info">
               <h4>Sales Prediction</h4>             
               <div class="portfolio-links">
@@ -390,9 +689,8 @@ rates by 22% and reducing production issues.</li>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Car Rental Website</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/careent.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/project/carrent.svg" class="img-fluid" alt="Car Rental Website">
             <div class="portfolio-info">
               <h4>Car Rental Website</h4>              
               <div class="portfolio-links">
@@ -403,9 +701,8 @@ rates by 22% and reducing production issues.</li>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <center><h4>Social Distance Detector</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/social.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/project/social.svg" class="img-fluid" alt="Social Distance Detector">
             <div class="portfolio-info">
               <h4>Social Distance Detector</h4>              
               <div class="portfolio-links">
@@ -416,9 +713,8 @@ rates by 22% and reducing production issues.</li>
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
           <!-- <br> -->
-          <center><h4>Image Classification</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/cnn.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/project/cnn.svg" class="img-fluid" alt="Image Classification">
             <div class="portfolio-info">
               <h4>Image Classification</h4>
               <div class="portfolio-links">
@@ -429,9 +725,8 @@ rates by 22% and reducing production issues.</li>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Kido Learn</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/kidslearn.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/project/kido.svg" class="img-fluid" alt="Kido Learn">
             <div class="portfolio-info">
               <h4>Kido Learn</h4>
               <div class="portfolio-links">
@@ -442,11 +737,10 @@ rates by 22% and reducing production issues.</li>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Subsidy Distribution</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/subsidy.png" class="img-fluid" alt="">
+            <img src="assets/img/project/subsidy.svg" class="img-fluid" alt="Subsidy Distribution">
             <div class="portfolio-info">
-              <h4>Subsidy Distrobution</h4>
+              <h4>Subsidy Distribution</h4>
               <div class="portfolio-links">
                 <a href="projects/subsidy.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
               </div>
@@ -455,9 +749,8 @@ rates by 22% and reducing production issues.</li>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Smart School System</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/school.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/project/school.svg" class="img-fluid" alt="Smart School System">
             <div class="portfolio-info">
               <h4>Smart School System</h4>
               <div class="portfolio-links">
@@ -471,9 +764,8 @@ rates by 22% and reducing production issues.</li>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <!-- <br> -->
-          <center><h4>Ad Banner Rent</h4></center>
           <div class="portfolio-wrap">
-            <img src="assets/img/project/Ad.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/project/ad.svg" class="img-fluid" alt="Ad Banner Rent">
             <div class="portfolio-info">
               <h4>Ad Banner Rent</h4>
               <div class="portfolio-links">
@@ -501,38 +793,89 @@ rates by 22% and reducing production issues.</li>
       <div class="row">
         <div class="col-lg-12" data-aos="fade-up">
           <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-            <h4 style="text-align:left;color:#09203a">Languages and Databases</h4>
-                <p style="text-align:left;">
-                  <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="vectorlogo.zone" height="50" width="150">
-                  <img src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg" alt="vectorlogo.zone" height="50" width="120">
-                  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="upload.wikimedia.org" height="60" width="90">
-                  <img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="vectorlogo.zone" height="70" width="130">
-                  <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="vectorlogo.zone" height="50" width="190">
-
+            <h4 style="text-align:left;color:#09203a">Programming Languages</h4>
+                <p style="text-align:left;" class="skill-logos">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
                 </p>
             </div>
-            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Frameworks</h4>
-                <p style="text-align:left;">
-                  <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="upload.wikimedia.org" width="90" height="70">
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">AI / ML &amp; Generative AI</h4>
+                <p style="text-align:left;" class="skill-logos">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg" alt="OpenAI" title="OpenAI API">
+                  <img src="https://cdn.simpleicons.org/anthropic/1C1C1C" alt="Anthropic Claude" title="Anthropic / Claude">
+                  <img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain" title="LangChain">
+                  <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face" title="Hugging Face Transformers">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" title="PyTorch">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras" title="Keras">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="scikit-learn" title="scikit-learn">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" title="Pandas">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" title="NumPy">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" title="OpenCV">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" title="Jupyter">
               </p>
           </div>
-          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style="background:#fff">
-              <h4 style="text-align:left;color:#09203a">Tools</h4>
-                <p style="text-align:left;">
-                  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg" alt="vectorlogo.zone">
-                  <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="vectorlogo.zone">
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">Backend &amp; APIs</h4>
+                <p style="text-align:left;" class="skill-logos">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" title="FastAPI">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" title="Flask">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" title="Spring Boot">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL" title="GraphQL">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grpc/grpc-plain.svg" alt="gRPC" title="gRPC">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="Swagger / OpenAPI" title="Swagger / OpenAPI">
+              </p>
+          </div>
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">Frontend</h4>
+                <p style="text-align:left;" class="skill-logos">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React.js">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" title="Next.js">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" title="Redux">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" title="Tailwind CSS">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
+              </p>
+          </div>
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">Databases &amp; Data</h4>
+                <p style="text-align:left;" class="skill-logos">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" title="MySQL">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" title="Redis">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" title="Elasticsearch">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="Apache Spark" title="Apache Spark">
+              </p>
+          </div>
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">Cloud &amp; DevOps</h4>
+                <p style="text-align:left;" class="skill-logos">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" title="AWS (Lambda, S3, DynamoDB, RDS)">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" title="Google Cloud Platform">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" title="Kubernetes">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" title="Terraform">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" title="Jenkins">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" title="GitHub Actions">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD" title="GitLab CI/CD">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git">
+              </p>
+          </div>
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">Messaging &amp; Distributed Systems</h4>
+                <p style="text-align:left;" class="skill-logos">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Apache Kafka" title="Apache Kafka">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg" alt="RabbitMQ" title="RabbitMQ">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" title="Nginx">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" alt="Apache Spark" title="Real-Time Streaming (Spark)">
               </p>
           </div>
         </div>
@@ -588,7 +931,7 @@ rates by 22% and reducing production issues.</li>
             <i class="bx bx-share-alt"></i>
             <h3>Social Profiles</h3>
             <div class="social-links">
-              <a href="https://www.linkedin.com/in/daksh-goti" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/dakshgoti" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               <a href="https://www.github.com/dakshgoti14" target="_blank" class="github"><i class="bx bxl-github"></i></a>
               <a href="mailto:daksh.g@myhotmail.net" target="_blank" class="google"><i class="bx bxl-google"></i></a>
 
@@ -618,6 +961,9 @@ rates by 22% and reducing production issues.</li>
 
   <!-- End Contact Section -->
 
+  <!-- Scroll to top -->
+  <button class="back-to-top" aria-label="Back to top"><i class="bx bx-chevron-up"></i></button>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -631,7 +977,7 @@ rates by 22% and reducing production issues.</li>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script type="text/javascript">
     var typed = new Typed('.typing',{
-      strings: ["Coder", "Developer", "AI Enthusiast"],
+      strings: ["AI Software Engineer", "Generative AI Developer", "Full-Stack Engineer"],
       loop: true,
       typeSpeed: 65,
       backSpeed: 65
@@ -640,6 +986,23 @@ rates by 22% and reducing production issues.</li>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Scroll-to-top behavior -->
+  <script>
+    (function () {
+      var btn = document.querySelector('.back-to-top');
+      if (!btn) return;
+      var toggle = function () {
+        if (window.scrollY > 320) { btn.classList.add('show'); }
+        else { btn.classList.remove('show'); }
+      };
+      window.addEventListener('scroll', toggle, { passive: true });
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      toggle();
+    })();
+  </script>
 
 </body>
 

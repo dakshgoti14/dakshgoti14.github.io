@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Image Classification">
+  <defs>
+    <linearGradient id="n-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a0f30"/><stop offset="0.5" stop-color="#331b5c"/><stop offset="1" stop-color="#5a2f8a"/></linearGradient>
+    <linearGradient id="n-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e0820" stop-opacity="0"/><stop offset="1" stop-color="#0e0820" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="n-panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/></linearGradient>
+    <linearGradient id="n-shirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b58bff"/><stop offset="0.7" stop-color="#9d6fff"/><stop offset="1" stop-color="#7d4fe0"/></linearGradient>
+    <linearGradient id="n-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#f2c199"/></linearGradient>
+    <linearGradient id="n-photo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffcf8a"/><stop offset="1" stop-color="#e8863f"/></linearGradient>
+    <radialGradient id="n-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#c08bff" stop-opacity="0.5"/><stop offset="1" stop-color="#c08bff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="n-spot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <pattern id="n-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.05"/></pattern>
+    <filter id="n-soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0e0820" flood-opacity="0.45"/></filter>
+    <filter id="n-blur"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="640" height="420" fill="url(#n-bg)"/>
+  <circle cx="460" cy="150" r="170" fill="url(#n-glow)" filter="url(#n-blur)"/>
+  <circle cx="110" cy="360" r="120" fill="url(#n-glow)" filter="url(#n-blur)" opacity="0.55"/>
+  <rect width="640" height="420" fill="url(#n-grid)"/>
+  <rect y="300" width="640" height="120" fill="url(#n-floor)"/>
+  <ellipse cx="150" cy="250" rx="140" ry="150" fill="url(#n-spot)"/>
+  <g fill="#d9c6ff"><circle cx="330" cy="56" r="2.6" opacity="0.7"/><circle cx="612" cy="300" r="2.2" opacity="0.6"/><circle cx="60" cy="150" r="2" opacity="0.5"/></g>
+
+  <ellipse cx="168" cy="388" rx="115" ry="15" fill="#0e0820" opacity="0.4"/>
+
+  <!-- ===== Person ===== -->
+  <g filter="url(#n-soft)">
+    <rect x="142" y="316" width="21" height="74" rx="9" fill="#2a1c44"/>
+    <rect x="175" y="316" width="21" height="74" rx="9" fill="#382656"/>
+    <path d="M137,384 h32 a5,5 0 0 1 5,5 v4 h-42 v-4 a5,5 0 0 1 5,-5 Z" fill="#160e28"/>
+    <path d="M170,384 h32 a5,5 0 0 1 5,5 v4 h-42 v-4 a5,5 0 0 1 5,-5 Z" fill="#160e28"/>
+    <path d="M130,214 C130,199 142,190 168,190 C194,190 206,199 206,214 L213,326 C213,335 205,341 196,341 L140,341 C131,341 123,335 123,326 Z" fill="url(#n-shirt)"/>
+    <path d="M188,193 C200,197 206,205 206,214 L213,326 C213,335 205,341 196,341 L178,341 Z" fill="#7d4fe0" opacity="0.5"/>
+    <path d="M168,190 L154,214 L168,230 L182,214 Z" fill="#7d4fe0"/>
+    <path d="M204,224 C240,214 274,208 300,210" fill="none" stroke="url(#n-shirt)" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="306" cy="210" r="11" fill="url(#n-skin)"/><rect x="306" y="205" width="15" height="6" rx="3" fill="url(#n-skin)"/>
+    <path d="M132,224 C121,250 121,286 133,312" fill="none" stroke="url(#n-shirt)" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="133" cy="316" r="11" fill="url(#n-skin)"/>
+    <rect x="159" y="166" width="18" height="26" rx="7" fill="#f2c199"/>
+    <circle cx="168" cy="148" r="31" fill="url(#n-skin)"/>
+    <circle cx="139" cy="150" r="6" fill="#f2c199"/>
+    <path d="M137,150 C135,120 155,108 168,108 C186,108 200,122 199,150 C193,132 182,126 168,126 C152,126 142,134 137,150 Z" fill="#241528"/>
+    <circle cx="159" cy="149" r="2.8" fill="#3a2a20"/><circle cx="177" cy="149" r="2.8" fill="#3a2a20"/>
+    <path d="M154,141 q6,-4 11,-1" fill="none" stroke="#241528" stroke-width="2" stroke-linecap="round"/>
+    <path d="M172,140 q5,-3 10,1" fill="none" stroke="#241528" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="156" cy="158" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/><ellipse cx="180" cy="158" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/>
+    <path d="M161,161 q7,6 14,0" fill="none" stroke="#c07a4f" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Monitor with classification ===== -->
+  <g transform="translate(322,132)" filter="url(#n-soft)">
+    <rect x="0" y="0" width="284" height="196" rx="16" fill="url(#n-panel)" stroke="#c08bff" stroke-opacity="0.35"/>
+    <!-- image being classified -->
+    <g transform="translate(20,22)">
+      <rect x="0" y="0" width="112" height="112" rx="10" fill="url(#n-photo)"/>
+      <!-- simple cat -->
+      <circle cx="56" cy="66" r="30" fill="#5a3a1e" opacity="0.85"/>
+      <path d="M34,44 L40,22 L52,40 Z" fill="#5a3a1e"/><path d="M78,44 L72,22 L60,40 Z" fill="#5a3a1e"/>
+      <circle cx="46" cy="62" r="4" fill="#fff"/><circle cx="66" cy="62" r="4" fill="#fff"/>
+      <circle cx="46" cy="62" r="2" fill="#241528"/><circle cx="66" cy="62" r="2" fill="#241528"/>
+      <path d="M52,74 q4,4 8,0" fill="none" stroke="#241528" stroke-width="2" stroke-linecap="round"/>
+      <!-- bounding box -->
+      <rect x="18" y="30" width="76" height="70" rx="4" fill="none" stroke="#8ef2c4" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <g transform="translate(18,14)"><rect width="52" height="16" rx="3" fill="#8ef2c4"/><text x="26" y="12" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="9" fill="#04241a">cat 0.97</text></g>
+    </g>
+    <!-- neural net -->
+    <g transform="translate(150,30)">
+      <g stroke="#d9c6ff" stroke-width="1.6" opacity="0.7">
+        <line x1="0" y1="40" x2="46" y2="14"/><line x1="0" y1="40" x2="46" y2="52"/><line x1="0" y1="40" x2="46" y2="90"/>
+        <line x1="46" y1="14" x2="96" y2="30"/><line x1="46" y1="52" x2="96" y2="30"/><line x1="46" y1="90" x2="96" y2="70"/>
+        <line x1="46" y1="14" x2="96" y2="70"/><line x1="46" y1="90" x2="96" y2="30"/>
+      </g>
+      <circle cx="0" cy="40" r="9" fill="#ffffff"/>
+      <circle cx="46" cy="14" r="9" fill="#b58bff"/><circle cx="46" cy="52" r="9" fill="#b58bff"/><circle cx="46" cy="90" r="9" fill="#b58bff"/>
+      <circle cx="96" cy="30" r="10" fill="#8ef2c4"/><circle cx="96" cy="70" r="10" fill="#c08bff"/>
+    </g>
+    <!-- prediction bars -->
+    <g transform="translate(20,150)">
+      <rect x="0" y="0" width="120" height="10" rx="5" fill="#ffffff" opacity="0.15"/><rect x="0" y="0" width="112" height="10" rx="5" fill="#8ef2c4"/><text x="130" y="9" font-family="Poppins,Arial,sans-serif" font-size="10" fill="#eadcff">cat 97%</text>
+      <rect x="0" y="18" width="120" height="10" rx="5" fill="#ffffff" opacity="0.15"/><rect x="0" y="18" width="34" height="10" rx="5" fill="#c08bff"/><text x="130" y="27" font-family="Poppins,Arial,sans-serif" font-size="10" fill="#eadcff">dog 3%</text>
+    </g>
+  </g>
+
+  <text x="40" y="58" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="30" fill="#ffffff">Image Classification</text>
+  <rect x="40" y="68" width="54" height="3" rx="1.5" fill="#c08bff"/>
+  <text x="40" y="92" font-family="Poppins,Arial,sans-serif" font-size="14.5" fill="#d6c6f2">Deep Learning · CNN · TensorFlow</text>
+</svg>

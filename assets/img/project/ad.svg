@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Ad Banner Rent">
+  <defs>
+    <linearGradient id="a-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0f24"/><stop offset="0.5" stop-color="#5c1d44"/><stop offset="1" stop-color="#a83b7a"/></linearGradient>
+    <linearGradient id="a-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0812" stop-opacity="0"/><stop offset="1" stop-color="#1a0812" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="a-board" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6edf3"/></linearGradient>
+    <linearGradient id="a-ad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7ab0"/><stop offset="1" stop-color="#e857a3"/></linearGradient>
+    <linearGradient id="a-shirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5fd0e8"/><stop offset="0.7" stop-color="#3fb0d0"/><stop offset="1" stop-color="#2a92b0"/></linearGradient>
+    <linearGradient id="a-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#f2c199"/></linearGradient>
+    <radialGradient id="a-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ff9bc0" stop-opacity="0.5"/><stop offset="1" stop-color="#ff9bc0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="a-spot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <pattern id="a-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.05"/></pattern>
+    <filter id="a-soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#1a0812" flood-opacity="0.45"/></filter>
+    <filter id="a-soft2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1a0812" flood-opacity="0.35"/></filter>
+    <filter id="a-blur"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="640" height="420" fill="url(#a-bg)"/>
+  <circle cx="450" cy="150" r="175" fill="url(#a-glow)" filter="url(#a-blur)"/>
+  <circle cx="110" cy="360" r="120" fill="url(#a-glow)" filter="url(#a-blur)" opacity="0.55"/>
+  <rect width="640" height="420" fill="url(#a-grid)"/>
+  <rect y="300" width="640" height="120" fill="url(#a-floor)"/>
+  <ellipse cx="150" cy="250" rx="140" ry="150" fill="url(#a-spot)"/>
+  <g fill="#ff9bc0"><circle cx="330" cy="60" r="2.6" opacity="0.7"/><circle cx="600" cy="300" r="2.2" opacity="0.6"/><circle cx="60" cy="150" r="2" opacity="0.5"/></g>
+
+  <!-- ===== Billboard ===== -->
+  <g transform="translate(330,120)" filter="url(#a-soft)">
+    <rect x="0" y="0" width="270" height="150" rx="12" fill="url(#a-board)"/>
+    <rect x="10" y="10" width="250" height="130" rx="8" fill="url(#a-ad)"/>
+    <!-- ad content -->
+    <circle cx="58" cy="75" r="34" fill="#ffffff" opacity="0.9"/>
+    <path d="M42,80 l10,10 l22,-24" fill="none" stroke="#e857a3" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="110" y="38" width="120" height="16" rx="8" fill="#ffffff" opacity="0.95"/>
+    <rect x="110" y="64" width="96" height="11" rx="5.5" fill="#ffffff" opacity="0.6"/>
+    <rect x="110" y="82" width="108" height="11" rx="5.5" fill="#ffffff" opacity="0.6"/>
+    <rect x="110" y="106" width="70" height="22" rx="11" fill="#ffe08a"/><text x="145" y="121" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="11" fill="#7a4a12">YOUR AD</text>
+    <!-- legs -->
+    <rect x="60" y="150" width="14" height="118" fill="#c98fb4"/><rect x="196" y="150" width="14" height="118" fill="#c98fb4"/>
+    <path d="M60,150 l-14,118 M74,150 l14,118 M196,150 l-14,118 M210,150 l14,118" stroke="#c98fb4" stroke-width="6" opacity="0"/>
+    <rect x="46" y="196" width="42" height="8" rx="4" fill="#c98fb4"/><rect x="182" y="196" width="42" height="8" rx="4" fill="#c98fb4"/>
+    <!-- spotlights -->
+    <g fill="#ffe08a"><rect x="40" y="-14" width="10" height="14" rx="3"/><rect x="130" y="-14" width="10" height="14" rx="3"/><rect x="220" y="-14" width="10" height="14" rx="3"/></g>
+  </g>
+
+  <ellipse cx="170" cy="390" rx="110" ry="14" fill="#1a0812" opacity="0.4"/>
+
+  <!-- ===== Presenter ===== -->
+  <g filter="url(#a-soft)">
+    <rect x="144" y="318" width="21" height="72" rx="9" fill="#2a2038"/>
+    <rect x="177" y="318" width="21" height="72" rx="9" fill="#382b4a"/>
+    <path d="M132,214 C132,199 144,190 170,190 C196,190 208,199 208,214 L215,326 C215,335 207,341 198,341 L142,341 C133,341 125,335 125,326 Z" fill="url(#a-shirt)"/>
+    <path d="M190,193 C202,197 208,205 208,214 L215,326 C215,335 207,341 198,341 L180,341 Z" fill="#2a92b0" opacity="0.5"/>
+    <path d="M170,190 L156,214 L170,230 L184,214 Z" fill="#2a92b0"/>
+    <!-- arm presenting toward board -->
+    <path d="M206,222 C236,206 258,190 272,168" fill="none" stroke="url(#a-shirt)" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="275" cy="162" r="11" fill="url(#a-skin)"/><rect x="266" y="152" width="16" height="6" rx="3" fill="url(#a-skin)"/>
+    <path d="M134,224 C123,250 123,286 135,312" fill="none" stroke="url(#a-shirt)" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="135" cy="316" r="10" fill="url(#a-skin)"/>
+    <rect x="161" y="168" width="18" height="26" rx="7" fill="#f2c199"/>
+    <circle cx="170" cy="150" r="30" fill="url(#a-skin)"/>
+    <circle cx="141" cy="152" r="6" fill="#f2c199"/>
+    <path d="M141,152 C139,124 159,112 170,112 C188,112 201,126 200,152 C194,134 183,128 170,128 C154,128 146,136 141,152 Z" fill="#241820"/>
+    <circle cx="161" cy="151" r="2.8" fill="#3a2a20"/><circle cx="179" cy="151" r="2.8" fill="#3a2a20"/>
+    <path d="M156,143 q6,-4 11,-1" fill="none" stroke="#241820" stroke-width="2" stroke-linecap="round"/>
+    <path d="M174,142 q5,-3 10,1" fill="none" stroke="#241820" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="158" cy="160" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/><ellipse cx="182" cy="160" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/>
+    <path d="M163,163 q7,6 14,0" fill="none" stroke="#c07a4f" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+
+  <text x="40" y="58" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="30" fill="#ffffff">Ad Banner Rent</text>
+  <rect x="40" y="68" width="54" height="3" rx="1.5" fill="#ff9bc0"/>
+  <text x="40" y="92" font-family="Poppins,Arial,sans-serif" font-size="14.5" fill="#f3c6da">Billboard Booking Marketplace</text>
+</svg>
