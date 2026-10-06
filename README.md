@@ -1,67 +1,54 @@
-# 🌟 Welcome to My Web Portfolio! 🌐
+# dakshgoti14.github.io
 
-Explore my **personal portfolio website**, where creativity, technical expertise, and innovation come together. My work showcases **real-world projects**, **responsive designs**, and **modern web development techniques** that push boundaries.
+Portfolio of Daksh Goti, Software Engineer. Served by GitHub Pages at https://dakshgoti14.github.io.
 
----
+The site is static HTML, CSS, and a small amount of JavaScript. There is no framework and there are no runtime dependencies.
 
-### 🚀 **What’s Inside My Portfolio**:
-- 🖥️ **Responsive Web Designs**: A showcase of web projects designed to look stunning on both mobile and desktop.
-- 💼 **Real-World Projects**: Detailed case studies that outline the problems, solutions, tools, and technologies behind each project.
-- ⚙️ **Dynamic and Interactive**: Explore my hands-on projects that integrate animations, interactivity, and real-time data.
-- 🛠️ **Automated and Efficient**: Powered by modern workflows such as **CI/CD**, **API integrations**, and **version control**.
+## Editing content
 
----
+All content lives in [`content/site.mjs`](content/site.mjs): profile, experience, projects, case studies, skills, education, and certifications. Make your edits there, then regenerate the pages:
 
-### **🌟 Key Features of My Portfolio**:
+```sh
+npm install     # once — installs GSAP, which the build copies into assets/js/vendor/
+npm test        # build, then check
+```
 
-| 🎯 [Project Gallery](#) | Explore a collection of my best work, featuring **React**, **Node.js**, **Python**, and more. |
-| :-- | :-- |
-| 📂 [Source Code](https://github.com/dakshgoti14) | Browse through the source code of my portfolio and other projects hosted on GitHub. |
-| 🛠️ [Tech Stack](#) | Discover the tools, libraries, and frameworks that power my development process. |
-| ✨ [Design & Animation](#) | See the magic of CSS, JavaScript, and creative animations in action. |
-| 💡 [Automation & API Integrations](#) | Learn how automation and API-driven data bring efficiency to my workflows. |
+`index.html` and `projects/{medinsight,orderstream,documind,streamguard}.html` are **generated**. Edit the content file or the components, not the generated HTML.
 
----
+## Scripts
 
-### 🖼️ **Preview of My Latest Project**
-<div align="center">
-<img alt="Software Development Engineer" height=350 width=450 src="https://images.squarespace-cdn.com/content/v1/5769fc401b631bab1addb2ab/1541580611624-TE64QGKRJG8SWAIUS7NS/ke17ZwdGBToddI8pDm48kPoswlzjSVMM-SxOp7CV59BZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI6FXy8c9PWtBlqAVlUS5izpdcIXDZqDYvprRqZ29Pw0o/coding-freak.gif" />  
-</div>
+| Command | What it does |
+| --- | --- |
+| `npm run build` | Generates the homepage and the case-study pages from `content/site.mjs` |
+| `npm run check` | Checks local links, `#anchors`, duplicate ids, image alt text, `rel="noopener"`, heading order, metadata, and that removed personal details have not come back |
+| `npm run logos` | Downloads the brand marks listed in `content/tech.mjs` into `assets/img/tech/` (devicon, MIT; simple-icons, CC0) |
+| `npm run github` | Snapshots language and last-push dates for the repositories in `openSource` into `content/github.json` (the site never calls the GitHub API at runtime) |
+| `npm run assets` | Re-renders `og-image.png`, `favicon.png`, and `apple-touch-icon.png` with local Chrome (`CHROME=/path` to override) |
 
+Requires Node 18 or later.
 
----
+## Layout
 
-### 🛠️ **Tools & Technologies**:
+```
+content/site.mjs        content data (single source of truth)
+content/tech.mjs        technology name → brand logo / concept icon
+scripts/components.mjs  HTML components (nav, hero, timeline, project card, architecture diagram, ...)
+scripts/build.mjs       static generator
+scripts/check.mjs       static checks
+scripts/assets.mjs      raster asset renderer (uses scripts/og.html)
+scripts/fetch-logos.mjs logo downloader
+scripts/fetch-github.mjs GitHub metadata snapshot
+assets/css/site.css     design system and layout
+assets/js/site.js       progressive enhancement: mobile menu, ⌘K palette, architecture beams, active nav, TOC, reveal, count-up, copy
+assets/js/motion.js     GSAP + ScrollTrigger choreography (hero intro, headings, timeline, project reveals, tilt)
+assets/js/aurora.js     WebGL aurora shader behind the hero
+assets/js/vendor/       self-hosted GSAP (copied from node_modules by the build)
+```
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Microsoft Azure](https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
-![REST API](https://img.shields.io/badge/REST_API-0052CC?style=for-the-badge&logo=api&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Artificial Intelligence](https://img.shields.io/badge/Artificial_Intelligence-0277BD?style=for-the-badge&logo=ai&logoColor=white)
-![Natural Language Processing](https://img.shields.io/badge/Natural_Language_Processing-FF6F61?style=for-the-badge&logo=nlp&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-![NoSQL](https://img.shields.io/badge/NoSQL-3E6E93?style=for-the-badge&logo=nosql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+## Motion
 
----
+All animation is progressive enhancement. Visitors who prefer reduced motion get a static page; if GSAP or WebGL is unavailable,
+the CSS-only version renders and a timeout in the page head guarantees nothing stays hidden. GSAP is used under its
+[standard no-charge license](https://gsap.com/standard-license).
 
-### 🔗 **Quick Links**:
-
-- 🌐 **[Visit My Portfolio](https://dakshgoti14.github.io)**  
-- 📂 **[Explore My GitHub Repos](https://github.com/dakshgoti14)**  
-- ✉️ **[Contact Me](mailto:your.dakshngoti6071@gmail.com)**  
-
----
-
-👨‍💻 **Built for Devs by a Dev** — Always learning, always evolving. Let’s collaborate and create something amazing together!
+The legacy template (`assets/css/style.css`, `assets/js/main.js`, `assets/vendor/`) is kept only for the older, unlinked pages in `projects/`.
