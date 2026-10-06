@@ -12,7 +12,8 @@
     "assets": "node scripts/assets.mjs",
     "test": "npm run build && npm run check",
     "logos": "node scripts/fetch-logos.mjs",
-    "github": "node scripts/fetch-github.mjs"
+    "github": "node scripts/fetch-github.mjs",
+    "dist": "npm run build && node scripts/dist.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0"

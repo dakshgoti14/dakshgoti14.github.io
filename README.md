@@ -23,9 +23,15 @@ npm test        # build, then check
 | `npm run check` | Checks local links, `#anchors`, duplicate ids, image alt text, `rel="noopener"`, heading order, metadata, and that removed personal details have not come back |
 | `npm run logos` | Downloads the brand marks listed in `content/tech.mjs` into `assets/img/tech/` (devicon, MIT; simple-icons, CC0) |
 | `npm run github` | Snapshots language and last-push dates for the repositories in `openSource` into `content/github.json` (the site never calls the GitHub API at runtime) |
+| `npm run dist` | Builds, then packages only the public files (`index.html`, `projects/`, `assets/`, favicons) into `dist/` for Vercel |
 | `npm run assets` | Re-renders `og-image.png`, `favicon.png`, and `apple-touch-icon.png` with local Chrome (`CHROME=/path` to override) |
 
 Requires Node 18 or later.
+
+## Deploy
+
+- **GitHub Pages** serves the repository root, so the generated pages are committed — run `npm test` and commit.
+- **Vercel** uses `vercel.json`: it runs `npm ci` and `npm run dist`, then serves `dist/`.
 
 ## Layout
 
