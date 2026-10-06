@@ -30,7 +30,7 @@ Requires Node 18 or later.
 
 ## Deploy
 
-- **GitHub Pages** serves the repository root, so the generated pages are committed — run `npm test` and commit.
+- **GitHub Pages** deploys through `.github/workflows/pages.yml` on every push to `main`: it runs `npm ci`, `npm test`, and packages `dist/`. Pull requests run the same build and checks without deploying. Generated pages are also committed, so the repository root stays browsable.
 - **Vercel** uses `vercel.json`: it runs `npm ci` and `npm run dist`, then serves `dist/`.
 
 ## Layout
