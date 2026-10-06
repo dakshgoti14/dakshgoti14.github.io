@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Car Rental Website">
+  <defs>
+    <linearGradient id="c-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c0f28"/><stop offset="0.5" stop-color="#4a1d3c"/><stop offset="1" stop-color="#8a2b52"/></linearGradient>
+    <linearGradient id="c-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#160a14" stop-opacity="0"/><stop offset="1" stop-color="#160a14" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="c-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9bc0"/><stop offset="1" stop-color="#ff5f95"/></linearGradient>
+    <linearGradient id="c-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe6ff"/><stop offset="1" stop-color="#6aa9d8"/></linearGradient>
+    <linearGradient id="c-shirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffd166"/><stop offset="0.7" stop-color="#f2b83c"/><stop offset="1" stop-color="#d99a20"/></linearGradient>
+    <linearGradient id="c-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#f2c199"/></linearGradient>
+    <radialGradient id="c-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ff9bc0" stop-opacity="0.5"/><stop offset="1" stop-color="#ff9bc0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="c-spot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="c-head" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff3c4" stop-opacity="0.9"/><stop offset="1" stop-color="#fff3c4" stop-opacity="0"/></radialGradient>
+    <pattern id="c-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.045"/></pattern>
+    <filter id="c-soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#160a14" flood-opacity="0.45"/></filter>
+    <filter id="c-soft2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#160a14" flood-opacity="0.35"/></filter>
+    <filter id="c-blur"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="640" height="420" fill="url(#c-bg)"/>
+  <circle cx="440" cy="150" r="170" fill="url(#c-glow)" filter="url(#c-blur)"/>
+  <circle cx="110" cy="360" r="120" fill="url(#c-glow)" filter="url(#c-blur)" opacity="0.55"/>
+  <rect width="640" height="420" fill="url(#c-grid)"/>
+  <rect y="300" width="640" height="120" fill="url(#c-floor)"/>
+  <ellipse cx="150" cy="250" rx="140" ry="150" fill="url(#c-spot)"/>
+  <g fill="#ff9bc0"><circle cx="330" cy="60" r="2.6" opacity="0.7"/><circle cx="600" cy="300" r="2.2" opacity="0.6"/><circle cx="60" cy="150" r="2" opacity="0.5"/></g>
+
+  <!-- location pin chip -->
+  <g transform="translate(300,66)" filter="url(#c-soft2)">
+    <path d="M0,-20 C12,-20 20,-11 20,0 C20,12 0,26 0,26 C0,26 -20,12 -20,0 C-20,-11 -12,-20 0,-20 Z" fill="#ffffff" opacity="0.9"/>
+    <circle cx="0" cy="0" r="7" fill="#8a2b52"/>
+  </g>
+
+  <!-- ===== Car ===== -->
+  <g transform="translate(300,196)" filter="url(#c-soft)">
+    <ellipse cx="150" cy="150" rx="165" ry="18" fill="#160a14" opacity="0.4"/>
+    <path d="M8,96 L44,44 C52,32 64,26 78,26 L214,26 C230,26 244,34 254,48 L286,94 L306,102 C316,106 320,114 320,124 L320,150 C320,158 314,164 306,164 L14,164 C6,164 0,158 0,150 L0,116 C0,106 -2,100 8,96 Z" fill="url(#c-body)"/>
+    <path d="M60,44 L120,44 L120,86 L28,86 Z" fill="url(#c-glass)"/>
+    <path d="M134,44 L206,44 C218,44 226,50 232,60 L250,86 L134,86 Z" fill="url(#c-glass)"/>
+    <path d="M126,40 L126,90" stroke="#ff5f95" stroke-width="5"/>
+    <rect x="20" y="120" width="34" height="16" rx="8" fill="#fff3c4"/>
+    <circle cx="300" cy="126" r="10" fill="#ffe08a"/><circle cx="300" cy="126" r="20" fill="url(#c-head)"/>
+    <path d="M-2,116 L320,116" stroke="#ff5f95" stroke-width="2" opacity="0.5"/>
+    <!-- wheels -->
+    <circle cx="78" cy="164" r="34" fill="#12060f"/><circle cx="78" cy="164" r="16" fill="#e0e6ec"/><circle cx="78" cy="164" r="6" fill="#7a8590"/>
+    <circle cx="248" cy="164" r="34" fill="#12060f"/><circle cx="248" cy="164" r="16" fill="#e0e6ec"/><circle cx="248" cy="164" r="6" fill="#7a8590"/>
+  </g>
+
+  <ellipse cx="150" cy="388" rx="105" ry="14" fill="#160a14" opacity="0.4"/>
+
+  <!-- ===== Person handing keys ===== -->
+  <g filter="url(#c-soft)">
+    <rect x="126" y="316" width="20" height="74" rx="9" fill="#3a2036"/>
+    <rect x="158" y="316" width="20" height="74" rx="9" fill="#4a2b44"/>
+    <path d="M121,384 h31 a5,5 0 0 1 5,5 v4 h-41 v-4 a5,5 0 0 1 5,-5 Z" fill="#1c0f18"/>
+    <path d="M154,384 h31 a5,5 0 0 1 5,5 v4 h-41 v-4 a5,5 0 0 1 5,-5 Z" fill="#1c0f18"/>
+    <path d="M114,214 C114,199 126,190 152,190 C178,190 190,199 190,214 L197,326 C197,335 189,341 180,341 L124,341 C115,341 107,335 107,326 Z" fill="url(#c-shirt)"/>
+    <path d="M172,193 C184,197 190,205 190,214 L197,326 C197,335 189,341 180,341 L162,341 Z" fill="#d99a20" opacity="0.5"/>
+    <path d="M152,190 L138,214 L152,230 L166,214 Z" fill="#d99a20"/>
+    <!-- arm holding key toward car -->
+    <path d="M186,224 C214,214 236,210 254,214" fill="none" stroke="url(#c-shirt)" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="258" cy="214" r="11" fill="url(#c-skin)"/>
+    <!-- key -->
+    <g transform="translate(266,206)"><circle cx="0" cy="6" r="7" fill="#e0e6ec"/><circle cx="0" cy="6" r="3" fill="#8a2b52"/><rect x="4" y="4" width="22" height="5" rx="2" fill="#c9d1d9"/><rect x="22" y="1" width="4" height="5" fill="#c9d1d9"/><rect x="18" y="1" width="3" height="4" fill="#c9d1d9"/></g>
+    <!-- resting arm -->
+    <path d="M116,224 C105,250 105,286 117,312" fill="none" stroke="url(#c-shirt)" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="117" cy="316" r="11" fill="url(#c-skin)"/>
+    <rect x="143" y="166" width="18" height="26" rx="7" fill="#f2c199"/>
+    <circle cx="152" cy="148" r="31" fill="url(#c-skin)"/>
+    <circle cx="123" cy="150" r="6" fill="#f2c199"/>
+    <path d="M121,150 C119,120 139,108 152,108 C170,108 184,122 183,150 C177,132 166,126 152,126 C136,126 126,134 121,150 Z" fill="#2b1a12"/>
+    <circle cx="143" cy="149" r="2.8" fill="#3a2a20"/><circle cx="161" cy="149" r="2.8" fill="#3a2a20"/>
+    <path d="M138,141 q6,-4 11,-1" fill="none" stroke="#2b1a12" stroke-width="2" stroke-linecap="round"/>
+    <path d="M156,140 q5,-3 10,1" fill="none" stroke="#2b1a12" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="140" cy="158" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/><ellipse cx="164" cy="158" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/>
+    <path d="M145,161 q7,6 14,0" fill="none" stroke="#c07a4f" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+
+  <text x="40" y="58" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="30" fill="#ffffff">Car Rental Website</text>
+  <rect x="40" y="68" width="54" height="3" rx="1.5" fill="#ff9bc0"/>
+  <text x="40" y="92" font-family="Poppins,Arial,sans-serif" font-size="14.5" fill="#f3c6da">Full-Stack Booking Platform</text>
+</svg>

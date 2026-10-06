@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Disease Prediction and Doctor Recommendation">
+  <defs>
+    <linearGradient id="d-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08243c"/><stop offset="0.5" stop-color="#0e4f60"/><stop offset="1" stop-color="#1c8b93"/></linearGradient>
+    <linearGradient id="d-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b3d4a" stop-opacity="0.0"/><stop offset="1" stop-color="#04141c" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="d-panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.06"/></linearGradient>
+    <linearGradient id="d-panel2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.04"/></linearGradient>
+    <linearGradient id="d-accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5fd0e8"/><stop offset="1" stop-color="#89f7e0"/></linearGradient>
+    <linearGradient id="d-bar" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0e4f60"/><stop offset="1" stop-color="#89f7e0"/></linearGradient>
+    <linearGradient id="d-coat" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="0.7" stop-color="#eef8ff"/><stop offset="1" stop-color="#cfe6f2"/></linearGradient>
+    <linearGradient id="d-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#f2c199"/></linearGradient>
+    <linearGradient id="d-ecg-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#89f7e0" stop-opacity="0.45"/><stop offset="1" stop-color="#89f7e0" stop-opacity="0"/></linearGradient>
+    <radialGradient id="d-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#89f7e0" stop-opacity="0.5"/><stop offset="1" stop-color="#89f7e0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="d-spot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <pattern id="d-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.045"/></pattern>
+    <filter id="d-soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#00131f" flood-opacity="0.42"/></filter>
+    <filter id="d-soft2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#00131f" flood-opacity="0.35"/></filter>
+    <filter id="d-blur"><feGaussianBlur stdDeviation="20"/></filter>
+    <clipPath id="d-ecg-clip"><rect x="0" y="46" width="176" height="70"/></clipPath>
+  </defs>
+
+  <!-- background -->
+  <rect width="640" height="420" fill="url(#d-bg)"/>
+  <circle cx="470" cy="150" r="165" fill="url(#d-glow)" filter="url(#d-blur)"/>
+  <circle cx="120" cy="360" r="130" fill="url(#d-glow)" filter="url(#d-blur)" opacity="0.55"/>
+  <rect width="640" height="420" fill="url(#d-grid)"/>
+  <rect y="300" width="640" height="120" fill="url(#d-floor)"/>
+  <ellipse cx="188" cy="250" rx="150" ry="150" fill="url(#d-spot)"/>
+
+  <!-- decorative dashed arcs + DNA + particles -->
+  <path d="M40,250 A160,160 0 0 1 200,90" fill="none" stroke="#89f7e0" stroke-opacity="0.18" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>
+  <g opacity="0.5" stroke="#89f7e0" stroke-width="2.4" stroke-linecap="round">
+    <path d="M556,52 q22,14 0,28 q-22,14 0,28 q22,14 0,28" fill="none"/>
+    <path d="M584,52 q-22,14 0,28 q22,14 0,28 q-22,14 0,28" fill="none"/>
+    <line x1="560" y1="60" x2="580" y2="60"/><line x1="556" y1="80" x2="584" y2="80"/><line x1="560" y1="100" x2="580" y2="100"/><line x1="556" y1="120" x2="584" y2="120"/>
+  </g>
+  <g fill="#89f7e0"><circle cx="330" cy="52" r="2.6" opacity="0.75"/><circle cx="612" cy="300" r="2.2" opacity="0.6"/><circle cx="60" cy="150" r="2" opacity="0.5"/><circle cx="300" cy="360" r="2" opacity="0.45"/></g>
+
+  <!-- floating pill capsule -->
+  <g transform="translate(300,74) rotate(35)" filter="url(#d-soft2)">
+    <rect x="-24" y="-11" width="48" height="22" rx="11" fill="#eef8ff"/>
+    <rect x="-24" y="-11" width="24" height="22" rx="11" fill="#ff8497"/>
+    <rect x="-18" y="-6" width="6" height="12" rx="3" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- ground shadow under character -->
+  <ellipse cx="176" cy="388" rx="120" ry="15" fill="#00131f" opacity="0.4"/>
+
+  <!-- ===== Clinician character ===== -->
+  <g filter="url(#d-soft)">
+    <!-- legs -->
+    <rect x="150" y="316" width="21" height="74" rx="9" fill="#1c3852"/>
+    <rect x="183" y="316" width="21" height="74" rx="9" fill="#25506b"/>
+    <path d="M145,384 h32 a5,5 0 0 1 5,5 v4 h-42 v-4 a5,5 0 0 1 5,-5 Z" fill="#0e2334"/>
+    <path d="M178,384 h32 a5,5 0 0 1 5,5 v4 h-42 v-4 a5,5 0 0 1 5,-5 Z" fill="#0e2334"/>
+    <!-- coat -->
+    <path d="M134,214 C134,199 148,188 176,188 C204,188 218,199 218,214 L227,330 C227,339 219,345 209,345 L143,345 C133,345 125,339 125,330 Z" fill="url(#d-coat)"/>
+    <!-- coat side shadow -->
+    <path d="M196,192 C210,196 218,204 218,214 L227,330 C227,339 219,345 209,345 L188,345 Z" fill="#bcd8ea" opacity="0.5"/>
+    <!-- inner collar + tie -->
+    <path d="M176,190 L158,236 L176,266 L194,236 Z" fill="#dcefff"/>
+    <path d="M176,190 L176,266" stroke="#b6d3e6" stroke-width="2"/>
+    <path d="M170,196 L176,268 L182,196 Z" fill="#2a9db0"/>
+    <path d="M170,196 L182,196 L176,214 Z" fill="#33b7cc"/>
+    <!-- ID lanyard -->
+    <path d="M168,192 L160,240" stroke="#0e2334" stroke-width="2.5"/>
+    <rect x="150" y="240" width="22" height="30" rx="4" fill="#0e2334"/>
+    <rect x="154" y="245" width="14" height="4" rx="2" fill="#89f7e0"/>
+    <rect x="154" y="252" width="14" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+    <!-- stethoscope -->
+    <path d="M164,202 C156,234 158,256 176,262 C194,256 196,234 188,202" fill="none" stroke="#0e2334" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="176" cy="268" r="7.5" fill="#89f7e0" stroke="#0e2334" stroke-width="2.5"/>
+    <!-- pointing arm (sleeve) -->
+    <path d="M212,222 C248,210 282,202 306,202" fill="none" stroke="url(#d-coat)" stroke-width="22" stroke-linecap="round"/>
+    <path d="M212,222 C248,210 282,202 306,202" fill="none" stroke="#cfe6f2" stroke-width="22" stroke-linecap="round" opacity="0.0"/>
+    <rect x="296" y="192" width="7" height="20" rx="3" fill="#2a9db0"/>
+    <!-- hand -->
+    <circle cx="312" cy="202" r="12" fill="url(#d-skin)"/>
+    <rect x="312" y="197" width="16" height="6" rx="3" fill="url(#d-skin)"/>
+    <!-- resting arm -->
+    <path d="M140,224 C128,250 128,286 140,312" fill="none" stroke="url(#d-coat)" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="140" cy="316" r="11" fill="url(#d-skin)"/>
+    <!-- neck + head -->
+    <rect x="167" y="164" width="18" height="26" rx="7" fill="#f2c199"/>
+    <path d="M167,166 h18 v8 q-9,7 -18,0 Z" fill="#d9a97e" opacity="0.6"/>
+    <circle cx="176" cy="146" r="31" fill="url(#d-skin)"/>
+    <!-- ear -->
+    <circle cx="147" cy="148" r="6" fill="#f2c199"/>
+    <!-- hair -->
+    <path d="M144,150 C142,120 162,106 176,106 C194,106 208,120 208,148 C208,138 200,128 188,128 C184,118 158,118 150,138 C147,141 145,146 144,150 Z" fill="#2b201a"/>
+    <path d="M150,138 C158,120 190,120 190,132 C196,130 202,136 204,144 C204,130 196,116 176,114 C160,113 150,124 150,138 Z" fill="#3a2c22"/>
+    <!-- face -->
+    <circle cx="167" cy="147" r="2.8" fill="#3a2a20"/><circle cx="185" cy="147" r="2.8" fill="#3a2a20"/>
+    <path d="M162,138 q6,-4 11,-1" fill="none" stroke="#2b201a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M180,137 q5,-3 10,1" fill="none" stroke="#2b201a" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="164" cy="156" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/>
+    <ellipse cx="188" cy="156" rx="4" ry="2.6" fill="#ff9f7e" opacity="0.5"/>
+    <path d="M169,159 q7,6 14,0" fill="none" stroke="#c07a4f" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Main dashboard panel ===== -->
+  <g transform="translate(322,140)" filter="url(#d-soft)">
+    <rect x="0" y="0" width="278" height="190" rx="18" fill="url(#d-panel)" stroke="#89f7e0" stroke-opacity="0.35"/>
+    <!-- header with patient avatar -->
+    <rect x="0" y="0" width="278" height="44" rx="18" fill="#ffffff" opacity="0.10"/>
+    <circle cx="26" cy="22" r="12" fill="url(#d-skin)"/>
+    <path d="M14,22 a12,12 0 0 1 24,0 Z" fill="#0e4f60" opacity="0.35"/>
+    <circle cx="26" cy="18" r="5" fill="url(#d-skin)"/>
+    <rect x="46" y="12" width="96" height="8" rx="4" fill="#ffffff" opacity="0.85"/>
+    <rect x="46" y="26" width="60" height="6" rx="3" fill="#ffffff" opacity="0.5"/>
+    <g transform="translate(214,13)"><rect width="52" height="20" rx="10" fill="#89f7e0" opacity="0.25"/><circle cx="12" cy="10" r="4" fill="#89f7e0"/><text x="22" y="14" font-family="Poppins,Arial,sans-serif" font-size="11" fill="#d6fbf2">94%</text></g>
+    <!-- ECG with area fill -->
+    <g clip-path="url(#d-ecg-clip)" transform="translate(20,0)">
+      <path d="M0,86 L44,86 L58,58 L76,116 L94,86 L236,86 L236,116 L0,116 Z" fill="url(#d-ecg-fill)"/>
+      <polyline points="0,86 44,86 58,58 76,116 94,86 236,86" fill="none" stroke="url(#d-accent)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="76" cy="116" r="3.5" fill="#89f7e0"/>
+    </g>
+    <!-- bars -->
+    <rect x="20" y="128" width="24" height="42" rx="5" fill="url(#d-bar)"/>
+    <rect x="52" y="112" width="24" height="58" rx="5" fill="url(#d-bar)"/>
+    <rect x="84" y="140" width="24" height="30" rx="5" fill="url(#d-bar)"/>
+    <!-- donut risk gauge -->
+    <g transform="translate(190,110)">
+      <circle cx="34" cy="34" r="30" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="9"/>
+      <path d="M34,4 a30,30 0 0 1 26,45" fill="none" stroke="url(#d-accent)" stroke-width="9" stroke-linecap="round"/>
+      <text x="34" y="32" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="15" fill="#ffffff">Low</text>
+      <text x="34" y="46" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="9" fill="#bfe9e1">risk</text>
+    </g>
+  </g>
+
+  <!-- recommendation chip -->
+  <g transform="translate(360,338)" filter="url(#d-soft2)">
+    <rect x="0" y="0" width="210" height="40" rx="20" fill="url(#d-panel2)" stroke="#89f7e0" stroke-opacity="0.3"/>
+    <circle cx="22" cy="20" r="11" fill="#89f7e0"/>
+    <path d="M17,20 l3.5,3.5 l6,-7" fill="none" stroke="#08243c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="42" y="25" font-family="Poppins,Arial,sans-serif" font-size="12.5" fill="#eafcf8">Recommended: Cardiology follow-up</text>
+  </g>
+
+  <!-- title -->
+  <text x="40" y="58" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="30" fill="#ffffff">Disease Prediction</text>
+  <rect x="40" y="68" width="54" height="3" rx="1.5" fill="url(#d-accent)"/>
+  <text x="40" y="92" font-family="Poppins,Arial,sans-serif" font-size="14.5" fill="#bfe9e1">ML Diagnosis &amp; Doctor Recommendation</text>
+</svg>

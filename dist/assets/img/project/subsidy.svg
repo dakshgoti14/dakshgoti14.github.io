@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Subsidy Distribution">
+  <defs>
+    <linearGradient id="u-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a2410"/><stop offset="0.5" stop-color="#3f4a1a"/><stop offset="1" stop-color="#7a6a1f"/></linearGradient>
+    <linearGradient id="u-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141805" stop-opacity="0"/><stop offset="1" stop-color="#141805" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="u-coin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#f2b83c"/></linearGradient>
+    <linearGradient id="u-a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5fb0e8"/><stop offset="0.7" stop-color="#3f92d0"/><stop offset="1" stop-color="#2a76b0"/></linearGradient>
+    <linearGradient id="u-b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7ecf9a"/><stop offset="0.7" stop-color="#57b57c"/><stop offset="1" stop-color="#3d9862"/></linearGradient>
+    <linearGradient id="u-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#f2c199"/></linearGradient>
+    <linearGradient id="u-skin2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8b98d"/><stop offset="1" stop-color="#cf9d6d"/></linearGradient>
+    <radialGradient id="u-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffd166" stop-opacity="0.5"/><stop offset="1" stop-color="#ffd166" stop-opacity="0"/></radialGradient>
+    <radialGradient id="u-spot" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <pattern id="u-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.05"/></pattern>
+    <filter id="u-soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#141805" flood-opacity="0.42"/></filter>
+    <filter id="u-soft2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#141805" flood-opacity="0.35"/></filter>
+    <filter id="u-blur"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="640" height="420" fill="url(#u-bg)"/>
+  <circle cx="320" cy="150" r="180" fill="url(#u-glow)" filter="url(#u-blur)"/>
+  <rect width="640" height="420" fill="url(#u-grid)"/>
+  <rect y="300" width="640" height="120" fill="url(#u-floor)"/>
+  <ellipse cx="320" cy="250" rx="200" ry="150" fill="url(#u-spot)"/>
+  <g fill="#ffe08a"><circle cx="90" cy="120" r="2" opacity="0.6"/><circle cx="560" cy="120" r="2.2" opacity="0.6"/></g>
+
+  <!-- falling coins arc -->
+  <g filter="url(#u-soft2)">
+    <g transform="translate(300,150)"><ellipse rx="17" ry="17" fill="url(#u-coin)"/><text y="6" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="18" fill="#8a5a12">$</text></g>
+    <g transform="translate(338,124)"><ellipse rx="13" ry="13" fill="url(#u-coin)"/><text y="5" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="14" fill="#8a5a12">$</text></g>
+    <g transform="translate(268,180)"><ellipse rx="12" ry="12" fill="url(#u-coin)"/><text y="4" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="13" fill="#8a5a12">$</text></g>
+  </g>
+
+  <ellipse cx="170" cy="390" rx="95" ry="14" fill="#141805" opacity="0.4"/>
+  <ellipse cx="472" cy="390" rx="95" ry="14" fill="#141805" opacity="0.4"/>
+
+  <!-- ===== Official (left, giving) ===== -->
+  <g filter="url(#u-soft)">
+    <rect x="150" y="318" width="19" height="72" rx="8" fill="#1c2a3a"/>
+    <rect x="180" y="318" width="19" height="72" rx="8" fill="#243a52"/>
+    <path d="M138,214 C138,200 150,191 174,191 C198,191 210,200 210,214 L216,328 C216,337 208,343 199,343 L149,343 C140,343 132,337 132,328 Z" fill="url(#u-a)"/>
+    <path d="M174,191 L161,214 L174,229 L187,214 Z" fill="#2a76b0"/>
+    <!-- giving arm to right -->
+    <path d="M206,224 C238,214 262,214 284,222" fill="none" stroke="url(#u-a)" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="288" cy="224" r="11" fill="url(#u-skin)"/>
+    <path d="M140,224 C130,248 130,282 141,308" fill="none" stroke="url(#u-a)" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="141" cy="312" r="10" fill="url(#u-skin)"/>
+    <rect x="165" y="168" width="18" height="26" rx="7" fill="#f2c199"/>
+    <circle cx="174" cy="150" r="30" fill="url(#u-skin)"/>
+    <path d="M146,152 C144,124 164,112 174,112 C192,112 205,126 204,152 C198,134 187,128 174,128 C158,128 150,136 146,152 Z" fill="#241812"/>
+    <circle cx="165" cy="151" r="2.7" fill="#3a2a20"/><circle cx="183" cy="151" r="2.7" fill="#3a2a20"/>
+    <path d="M167,162 q7,5 13,0" fill="none" stroke="#c07a4f" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== Citizen (right, receiving) ===== -->
+  <g filter="url(#u-soft)">
+    <rect x="444" y="318" width="19" height="72" rx="8" fill="#2a2418"/>
+    <rect x="474" y="318" width="19" height="72" rx="8" fill="#3a3320"/>
+    <path d="M432,214 C432,200 444,191 468,191 C492,191 504,200 504,214 L510,328 C510,337 502,343 493,343 L443,343 C434,343 426,337 426,328 Z" fill="url(#u-b)"/>
+    <path d="M468,191 L455,214 L468,229 L481,214 Z" fill="#3d9862"/>
+    <!-- receiving arm to left (cupped hands) -->
+    <path d="M436,226 C412,232 396,238 384,232" fill="none" stroke="url(#u-b)" stroke-width="19" stroke-linecap="round"/>
+    <circle cx="380" cy="232" r="12" fill="url(#u-skin2)"/>
+    <path d="M300,226 h84" stroke="none"/>
+    <path d="M310,232 C336,244 360,244 380,236" fill="none" stroke="url(#u-skin2)" stroke-width="10" stroke-linecap="round" opacity="0"/>
+    <path d="M506,226 C516,248 516,282 505,308" fill="none" stroke="url(#u-b)" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="505" cy="312" r="10" fill="url(#u-skin2)"/>
+    <rect x="459" y="168" width="18" height="26" rx="7" fill="#cf9d6d"/>
+    <circle cx="468" cy="150" r="30" fill="url(#u-skin2)"/>
+    <path d="M440,152 C438,124 458,112 468,112 C486,112 499,126 498,152 C492,134 481,128 468,128 C452,128 444,136 440,152 Z" fill="#1c130d"/>
+    <circle cx="459" cy="151" r="2.7" fill="#2a1c12"/><circle cx="477" cy="151" r="2.7" fill="#2a1c12"/>
+    <path d="M461,162 q7,5 13,0" fill="none" stroke="#a86a44" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <text x="40" y="56" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="30" fill="#ffffff">Subsidy Distribution</text>
+  <rect x="40" y="66" width="54" height="3" rx="1.5" fill="#ffd166"/>
+  <text x="40" y="90" font-family="Poppins,Arial,sans-serif" font-size="14.5" fill="#efe6bf">Transparent Benefit Delivery System</text>
+</svg>

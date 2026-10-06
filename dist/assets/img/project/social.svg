@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Social Distance Detector">
+  <defs>
+    <linearGradient id="so-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1830"/><stop offset="0.5" stop-color="#153052"/><stop offset="1" stop-color="#1f4d78"/></linearGradient>
+    <linearGradient id="so-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050d1a" stop-opacity="0"/><stop offset="1" stop-color="#050d1a" stop-opacity="0.55"/></linearGradient>
+    <linearGradient id="so-p1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ddc97"/><stop offset="1" stop-color="#25b378"/></linearGradient>
+    <linearGradient id="so-p2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff7a8a"/><stop offset="1" stop-color="#e0566a"/></linearGradient>
+    <linearGradient id="so-skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#f2c199"/></linearGradient>
+    <linearGradient id="so-panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/></linearGradient>
+    <radialGradient id="so-glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#5fd0e8" stop-opacity="0.45"/><stop offset="1" stop-color="#5fd0e8" stop-opacity="0"/></radialGradient>
+    <pattern id="so-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#ffffff" stroke-opacity="0.05"/></pattern>
+    <filter id="so-soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#050d1a" flood-opacity="0.42"/></filter>
+    <filter id="so-soft2" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#050d1a" flood-opacity="0.35"/></filter>
+    <filter id="so-blur"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+
+  <rect width="640" height="420" fill="url(#so-bg)"/>
+  <circle cx="320" cy="150" r="180" fill="url(#so-glow)" filter="url(#so-blur)"/>
+  <rect width="640" height="420" fill="url(#so-grid)"/>
+  <rect y="300" width="640" height="120" fill="url(#so-floor)"/>
+  <g fill="#7fe3ff"><circle cx="90" cy="120" r="2" opacity="0.6"/><circle cx="560" cy="120" r="2.2" opacity="0.6"/><circle cx="120" cy="330" r="2" opacity="0.5"/></g>
+
+  <!-- CCTV camera scanning -->
+  <g transform="translate(300,58)" filter="url(#so-soft2)">
+    <rect x="-26" y="-10" width="46" height="22" rx="6" fill="#cdd8e6"/>
+    <rect x="18" y="-6" width="14" height="14" rx="3" fill="#8fa2b8"/>
+    <circle cx="-8" cy="1" r="6" fill="#1f4d78"/><circle cx="-8" cy="1" r="2.5" fill="#7fe3ff"/>
+    <path d="M-26,12 L26,12 L40,26 L-40,26 Z" fill="#5fd0e8" opacity="0.12"/>
+  </g>
+
+  <ellipse cx="176" cy="392" rx="90" ry="13" fill="#050d1a" opacity="0.4"/>
+  <ellipse cx="452" cy="392" rx="90" ry="13" fill="#050d1a" opacity="0.4"/>
+
+  <!-- ===== Person 1 (safe / green) ===== -->
+  <g filter="url(#so-soft)">
+    <rect x="158" y="300" width="18" height="70" rx="8" fill="#1c3a52"/>
+    <rect x="186" y="300" width="18" height="70" rx="8" fill="#254f6b"/>
+    <path d="M150,214 C150,201 160,193 181,193 C202,193 212,201 212,214 L218,320 C218,328 212,333 204,333 L158,333 C150,333 144,328 144,320 Z" fill="url(#so-p1)"/>
+    <path d="M181,193 L169,214 L181,228 L193,214 Z" fill="#1c8b5f"/>
+    <path d="M148,226 C139,250 139,282 149,306" fill="none" stroke="url(#so-p1)" stroke-width="17" stroke-linecap="round"/>
+    <path d="M214,226 C223,250 223,282 213,306" fill="none" stroke="url(#so-p1)" stroke-width="17" stroke-linecap="round"/>
+    <circle cx="149" cy="310" r="10" fill="url(#so-skin)"/><circle cx="213" cy="310" r="10" fill="url(#so-skin)"/>
+    <rect x="172" y="172" width="17" height="24" rx="7" fill="#f2c199"/>
+    <circle cx="181" cy="154" r="28" fill="url(#so-skin)"/>
+    <path d="M154,156 C152,130 170,120 181,120 C197,120 209,132 208,156 C202,140 192,134 181,134 C167,134 158,142 154,156 Z" fill="#241a12"/>
+    <circle cx="173" cy="155" r="2.6" fill="#3a2a20"/><circle cx="189" cy="155" r="2.6" fill="#3a2a20"/>
+    <path d="M175,166 q6,5 12,0" fill="none" stroke="#c07a4f" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <!-- detection box green -->
+  <g stroke="#3ddc97" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M128,120 h22 M128,120 v22 M234,120 h-22 M234,120 v22 M128,344 h22 M128,344 v-22 M234,344 h-22 M234,344 v-22"/>
+  </g>
+  <g transform="translate(128,104)"><rect width="58" height="18" rx="4" fill="#3ddc97"/><text x="29" y="13" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="10" fill="#04241a">SAFE</text></g>
+
+  <!-- ===== Person 2 (alert / red) ===== -->
+  <g filter="url(#so-soft)">
+    <rect x="434" y="300" width="18" height="70" rx="8" fill="#3a2030"/>
+    <rect x="462" y="300" width="18" height="70" rx="8" fill="#4a2b3c"/>
+    <path d="M426,214 C426,201 436,193 457,193 C478,193 488,201 488,214 L494,320 C494,328 488,333 480,333 L434,333 C426,333 420,328 420,320 Z" fill="url(#so-p2)"/>
+    <path d="M457,193 L445,214 L457,228 L469,214 Z" fill="#c0455a"/>
+    <path d="M424,226 C415,250 415,282 425,306" fill="none" stroke="url(#so-p2)" stroke-width="17" stroke-linecap="round"/>
+    <path d="M490,226 C499,250 499,282 489,306" fill="none" stroke="url(#so-p2)" stroke-width="17" stroke-linecap="round"/>
+    <circle cx="425" cy="310" r="10" fill="url(#so-skin)"/><circle cx="489" cy="310" r="10" fill="url(#so-skin)"/>
+    <rect x="448" y="172" width="17" height="24" rx="7" fill="#f2c199"/>
+    <circle cx="457" cy="154" r="28" fill="url(#so-skin)"/>
+    <path d="M430,156 C428,130 446,120 457,120 C473,120 485,132 484,156 C478,140 468,134 457,134 C443,134 434,142 430,156 Z" fill="#2b1720"/>
+    <circle cx="449" cy="155" r="2.6" fill="#3a2a20"/><circle cx="465" cy="155" r="2.6" fill="#3a2a20"/>
+    <path d="M451,166 q6,5 12,0" fill="none" stroke="#c07a4f" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <!-- detection box red -->
+  <g stroke="#ff7a8a" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M404,120 h22 M404,120 v22 M510,120 h-22 M510,120 v22 M404,344 h22 M404,344 v-22 M510,344 h-22 M510,344 v-22"/>
+  </g>
+  <g transform="translate(404,104)"><rect width="70" height="18" rx="4" fill="#ff7a8a"/><text x="35" y="13" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="10" fill="#2a0710">TOO CLOSE</text></g>
+
+  <!-- distance line -->
+  <line x1="234" y1="250" x2="404" y2="250" stroke="#ffd166" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <path d="M234,244 v12 M404,244 v12" stroke="#ffd166" stroke-width="2.5"/>
+  <g transform="translate(288,236)" filter="url(#so-soft2)"><rect width="64" height="28" rx="14" fill="url(#so-panel)" stroke="#ffd166" stroke-opacity="0.5"/><text x="32" y="19" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="13" fill="#ffe08a">1.2 m</text></g>
+
+  <text x="40" y="56" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="30" fill="#ffffff">Social Distance Detector</text>
+  <rect x="40" y="66" width="54" height="3" rx="1.5" fill="#5fd0e8"/>
+  <text x="40" y="90" font-family="Poppins,Arial,sans-serif" font-size="14.5" fill="#bcd6ee">Computer Vision · OpenCV · YOLO</text>
+</svg>
