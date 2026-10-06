@@ -1,0 +1,21 @@
+{
+  "name": "dakshgoti14.github.io",
+  "private": true,
+  "description": "Portfolio of Daksh Goti — static site generated from content/site.mjs",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "assets": "node scripts/assets.mjs",
+    "test": "npm run build && npm run check",
+    "logos": "node scripts/fetch-logos.mjs",
+    "github": "node scripts/fetch-github.mjs",
+    "dist": "npm run build && node scripts/dist.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}
