@@ -10,7 +10,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'dist');
 
 // Everything a visitor's browser requests; build scripts, content source, and node_modules stay out.
-const PUBLIC = ['index.html', 'projects', 'assets', 'favicon.svg', 'favicon.png'];
+const PUBLIC = ['index.html', '404.html', 'about', 'experience', 'projects', 'education', 'contact', 'assets', 'favicon.svg', 'favicon.png', 'sitemap.xml', 'robots.txt'];
 
 await rm(out, { recursive: true, force: true });
 await mkdir(out);

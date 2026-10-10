@@ -20,30 +20,84 @@ export const profile = {
   // Hosted on Google Drive (the same file the previous site linked to).
   resume: 'https://drive.google.com/file/d/1qJRzlVpfweuOgToqPl3rJtS8fSuhHnm-/view?usp=sharing',
   photo: 'assets/img/daksh-goti.jpg',
-  photoSmall: 'assets/img/daksh-goti-360.jpg',
+  // The same photo with its background removed locally (scripts/cutout.swift); WebP with transparency, keyed by width.
+  cutout: { 520: 'assets/img/portrait-cutout-520.webp', 780: 'assets/img/portrait-cutout-780.webp', 1040: 'assets/img/portrait-cutout-1040.webp' },
+  // Square crop of the same photo (with its sunset background) for the About page.
+  round: { 480: 'assets/img/portrait-round-480.webp', 720: 'assets/img/portrait-round-720.webp', 960: 'assets/img/portrait-round-960.webp' },
   siteUrl: 'https://dakshgoti14.github.io',
 };
 
-// Hero panel: an illustrative service topology built from technologies in the skills list,
-// plus two results taken from the ServiceNow highlights below.
+// Hero: a one-line lead under the headline, plus the editorial blocks beside the portrait.
 export const hero = {
-  system: [
-    [{ label: 'Client', meta: 'React · Next.js' }],
-    [{ label: 'API', meta: 'FastAPI · GraphQL' }],
-    [{ label: 'Services', meta: 'Python · Java' }],
-    [
-      { label: 'Database', meta: 'PostgreSQL' },
-      { label: 'Cache', meta: 'Redis' },
-      { label: 'Queue', meta: 'Kafka' },
-      { label: 'AI', meta: 'OpenAI API', accent: true },
-    ],
+  lead: 'I build scalable systems and AI-powered products — backend services, distributed systems, and GenAI applications.',
+  side: [
+    {
+      label: 'About me',
+      body: 'AI Software Engineer at ServiceNow, building generative AI services, retrieval systems, and backend platforms.',
+      link: { href: 'about/', text: 'More about me' },
+    },
+    {
+      label: 'My work',
+      body: 'Six case studies — from a multi-agent document pipeline to a vector database built from the internals up.',
+      link: { href: 'projects/', text: 'Browse projects' },
+    },
   ],
-  badges: [
-    { value: '−18%', label: 'API latency', note: 'ServiceNow' },
-    { value: '−14%', label: 'retrieval time', note: 'ServiceNow' },
-  ],
-  marquee: ['Python', 'Java', 'TypeScript', 'React', 'Next.js', 'FastAPI', 'Spring Boot', 'Node.js', 'PostgreSQL', 'Redis', 'Apache Kafka', 'AWS', 'Docker', 'Kubernetes', 'Terraform', 'OpenAI API', 'LangChain', 'GraphQL', 'MongoDB', 'Elasticsearch'],
 };
+
+// Inner pages. Intros restate facts that appear elsewhere on the site.
+export const aboutPage = {
+  title: ['Nice to meet you,', 'I’m Daksh Goti'],
+  storyLabel: 'My story',
+  storyTitle: 'Where software engineering meets AI',
+  glanceTitle: '3+ years across backend, AI, and full-stack work',
+  // "At a glance" columns. Core stack is a subset of `skills`; certifications and companies are listed below.
+  coreStack: ['Python', 'Java', 'TypeScript', 'FastAPI', 'Spring Boot', 'React'],
+};
+
+export const experiencePage = {
+  lead: 'Generative AI services, retrieval systems, and backend platforms at ServiceNow; event-driven systems and web applications at Orion Technolab.',
+};
+
+export const projectsPage = {
+  lead: 'Case studies covering the problem, architecture, and engineering decisions — plus my professional work and open-source repositories.',
+};
+
+export const educationPage = {
+  title: ['Education &', 'certifications'],
+  lead: 'A master’s in Computer Science from California State University, Long Beach, a bachelor’s in Computer Science & Engineering, and cloud and AI credentials.',
+};
+
+export const contactPage = {
+  title: ['Let’s build', 'something useful.'],
+  lead: 'I’m always interested in hard engineering problems, AI applications, and opportunities to build products at scale.',
+};
+
+// Titles and descriptions for the inner pages (the homepage uses `seo`).
+export const pageMeta = {
+  about: {
+    title: 'About | Daksh Goti — Software Engineer',
+    description: 'About Daksh Goti, a Software Engineer building backend services, distributed systems, and AI-powered products with Python, Java, React, AWS, and GenAI tooling.',
+  },
+  experience: {
+    title: 'Experience | Daksh Goti — Software Engineer',
+    description: 'Work experience of Daksh Goti: AI Software Engineer at ServiceNow and Software Engineer at Orion Technolab — generative AI, microservices, and event-driven systems.',
+  },
+  projects: {
+    title: 'Projects | Daksh Goti — Software Engineer',
+    description: 'Case studies, professional work, and open-source projects by Daksh Goti, from a multi-agent document pipeline to a vector database built from the internals up.',
+  },
+  education: {
+    title: 'Education & Certifications | Daksh Goti',
+    description: 'M.S. Computer Science from California State University, Long Beach; B.Tech. in Computer Science & Engineering; AWS and IBM credentials.',
+  },
+  contact: {
+    title: 'Contact | Daksh Goti — Software Engineer',
+    description: 'Get in touch with Daksh Goti, a Software Engineer in Long Beach, CA: email, LinkedIn, GitHub, and résumé.',
+  },
+};
+
+// The tool strip under the hero (every name here also appears in `skills`).
+export const toolbelt = ['Python', 'Java', 'TypeScript', 'FastAPI', 'Spring Boot', 'React', 'Next.js', 'PostgreSQL', 'MongoDB', 'Redis', 'Apache Kafka', 'GraphQL', 'AWS', 'Docker', 'Kubernetes', 'Terraform', 'OpenAI API', 'LangChain'];
 
 export const seo = {
   title: 'Daksh Goti | Software Engineer | AI, Backend & Full Stack',
@@ -58,39 +112,38 @@ export const about = [
   "I'm particularly interested in where software engineering meets AI — turning LLMs, retrieval systems, and automation into reliable products that solve real problems.",
 ];
 
-export const aboutFacts = [
-  { icon: 'briefcase', label: 'Experience', value: '3+ years · ServiceNow, Orion Technolab' },
-  { icon: 'cap', label: 'Education', value: 'M.S. Computer Science, CSULB' },
-  { icon: 'layers', label: 'Focus', value: 'Backend · AI · Full stack' },
-  { icon: 'pin', label: 'Based in', value: 'Long Beach, CA' },
-];
+export const aboutIntro = {
+  headline: 'Building production systems since 2022',
+  // Every number here is stated elsewhere on the site.
+  stats: [
+    { value: '3+', label: 'Years of experience' },
+    { value: '6', label: 'Case studies with architecture' },
+    { value: '−18%', label: 'API latency at ServiceNow' },
+  ],
+};
 
 export const capabilities = [
   {
     title: 'AI-Powered Applications',
     icon: 'sparkles',
-    hue: '#a78bfa',
     body: 'LLM applications, RAG pipelines, intelligent workflows, AI-assisted products, and automation.',
     tech: ['OpenAI API', 'LangChain', 'RAG', 'Vector Search', 'Python', 'FastAPI'],
   },
   {
     title: 'Scalable Backend Systems',
     icon: 'server',
-    hue: '#5ab8ff',
     body: 'Production APIs, microservices, service integrations, authentication, data access, and backend architecture.',
     tech: ['Python', 'Java', 'Spring Boot', 'FastAPI', 'Node.js', 'REST', 'GraphQL'],
   },
   {
     title: 'Distributed & Real-Time Systems',
     icon: 'network',
-    hue: '#34d399',
     body: 'Event-driven systems, streaming pipelines, caching, and asynchronous message processing.',
     tech: ['Kafka', 'Spark Streaming', 'Redis', 'Microservices', 'Event-Driven Architecture'],
   },
   {
     title: 'Cloud-Native Engineering',
     icon: 'cloud',
-    hue: '#fbbf24',
     body: 'Containerized services, cloud infrastructure, CI/CD, and production operations.',
     tech: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions'],
   },
@@ -133,13 +186,12 @@ export const experience = [
   },
 ];
 
-// Every entry gets a case-study page. Entries with `featured: false` are listed under "More projects".
+// Every entry gets a case-study page. Entries with `featured: false` lead the "More projects" list.
 // Architecture diagrams are simplified views of each project's stated components.
 // `tiers` render top-to-bottom; a tier with several nodes fans out from the tier above.
 export const projects = [
   {
     slug: 'medinsight',
-    theme: '#2dd4bf',
     name: 'MedInsight',
     tagline: 'AI-enabled healthcare dashboard',
     summary:
@@ -191,7 +243,6 @@ export const projects = [
   },
   {
     slug: 'orderstream',
-    theme: '#a78bfa',
     name: 'OrderStream',
     tagline: 'Distributed order management system',
     summary:
@@ -248,7 +299,6 @@ export const projects = [
   },
   {
     slug: 'contextflow',
-    theme: '#60a5fa',
     name: 'ContextFlow',
     tagline: 'Multi-agent document processing platform',
     summary:
@@ -305,7 +355,6 @@ export const projects = [
   },
   {
     slug: 'vectorforgedb',
-    theme: '#fbbf24',
     name: 'VectorForgeDB',
     tagline: 'Vector database built from the internals up',
     summary:
@@ -363,7 +412,6 @@ export const projects = [
   },
   {
     slug: 'streamguard',
-    theme: '#34d399',
     name: 'StreamGuard',
     tagline: 'Real-time fraud detection pipeline',
     summary:
@@ -413,9 +461,7 @@ export const projects = [
   },
   {
     slug: 'documind',
-    theme: '#818cf8',
     featured: false,
-    image: 'assets/img/project/documind.svg',
     name: 'DocuMind',
     tagline: 'RAG document intelligence platform',
     summary:
@@ -471,20 +517,72 @@ export const projects = [
   },
 ];
 
-// Earlier academic and experimental work. Titles, stacks, and links are from the previous site.
-// TODO(daksh): the old detail pages for most of these describe a different project than their title
-// (e.g. "Disease Prediction" describes a Twitter sentiment app), so descriptions are omitted here
-// until they are confirmed. "Sales Prediction" links to github.com/rajaprerak — confirm that is intended.
+// Earlier academic and experimental work. Summaries, stacks, and links were checked against each GitHub
+// repository (its README, dependency files, and source) in October 2026; the old detail pages in projects/
+// describe different projects than their titles, so they are not used.
+// TODO(daksh): confirm the three marked "confirm" below, and add a sentence about Kido Learn and Ad Banner Rent.
 export const moreProjects = [
-  { name: 'Disease Prediction & Doctor Recommendation', image: 'assets/img/project/disease.svg', stack: ['Python', 'Django', 'TensorFlow', 'PostgreSQL', 'AWS'], repo: 'https://github.com/dakshgoti14/Sales-Prediction-and-Doctor-recommendation' },
-  { name: 'Image Classification', image: 'assets/img/project/cnn.svg', stack: ['Python', 'AWS SageMaker', 'Lambda', 'S3', 'CloudWatch'], repo: 'https://github.com/dakshgoti14/Automate-Image-Classification' },
-  { name: 'Sales Prediction', image: 'assets/img/project/sales.svg', stack: ['Python', 'Django', 'React', 'Node.js', 'MongoDB', 'MLlib'], repo: 'https://github.com/rajaprerak/image_recognition_as_a_service' },
-  { name: 'Social Distance Detector', image: 'assets/img/project/social.svg', stack: ['Python', 'OpenCV', 'YOLOv3', 'scikit-learn'], repo: 'https://github.com/dakshgoti14/Social-Distance-Detector---Hackathon' },
-  { name: 'Transparent Subsidy Distribution', image: 'assets/img/project/subsidy.svg', stack: ['React', 'Node.js', 'Ganache', 'Blockchain'], repo: 'https://github.com/dakshgoti14/-Transparent-Subsidy-Distribution-Systems-' },
-  { name: 'Car Rental Website', image: 'assets/img/project/carrent.svg', stack: ['React', 'JavaScript', 'Node.js', 'MSSQL'], repo: 'https://github.com/dakshgoti14/Car-Ren-Project' },
-  { name: 'Scube — Smart Society Management', image: 'assets/img/project/school.svg', stack: ['Android', 'Java', 'MSSQL'], repo: 'https://github.com/dakshgoti14/Scube-Smart-Society-Management-System-' },
-  { name: 'Kido Learn', image: 'assets/img/project/kido.svg', stack: ['Flutter', 'Dart', 'Firebase'], repo: null },
-  { name: 'Ad Banner Rent', image: 'assets/img/project/ad.svg', stack: ['Flutter', 'Dart', 'Firebase', 'AWS'], repo: null },
+  {
+    name: 'Disease Prediction & Doctor Recommendation',
+    summary: 'Predicts the likely disease from the symptoms a patient enters, recommends a doctor for it, and lets the patient book an appointment and chat with that doctor.',
+    // requirements.txt: Django, scikit-learn, psycopg2. Its README links to screenshots in another developer's
+    // repository (anuj-glitch/Disease-Prediction-using-Django-and-machine-learning); credit it if this builds on that project.
+    stack: ['Python', 'Django', 'scikit-learn', 'PostgreSQL'],
+    repo: 'https://github.com/dakshgoti14/Sales-Prediction-and-Doctor-recommendation',
+  },
+  {
+    name: 'Image Classification',
+    summary: 'Serverless image classification on AWS: an image uploaded to S3 triggers a Lambda function, a CIFAR-10 model hosted on SageMaker classifies it, and the results are logged to CloudWatch.',
+    stack: ['Python', 'AWS SageMaker', 'Lambda', 'S3', 'CloudWatch'],
+    repo: 'https://github.com/dakshgoti14/Automate-Image-Classification',
+  },
+  {
+    name: 'Sales Prediction',
+    summary: 'A Django app for recording products and daily sales that forecasts future sales with an LSTM model and charts the predictions against actual figures.',
+    // Stack from the repository (Django, Keras LSTM, Plotly); it previously linked to someone else's repository.
+    stack: ['Python', 'Django', 'Keras', 'Plotly'],
+    repo: 'https://github.com/dakshgoti14/Sales-Prediction',
+  },
+  {
+    name: 'Transparent Subsidy Distribution',
+    summary: 'A dashboard for beneficiaries of a blockchain-based subsidy system: it connects a MetaMask wallet through Web3.js and shows subsidy and application status, transaction history, and profile details.',
+    stack: ['React', 'Web3.js', 'Ethereum', 'Tailwind CSS'],
+    repo: 'https://github.com/dakshgoti14/-Transparent-Subsidy-Distribution-Systems-',
+  },
+  {
+    name: 'Car Rental Website',
+    summary: 'Customers search the fleet, book cars, and track their bookings; an admin panel manages vehicles, brands, and booking requests.',
+    stack: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS'],
+    repo: 'https://github.com/dakshgoti14/Car-Ren-Project',
+  },
+  {
+    name: 'Scube — Smart Society Management',
+    summary: 'An Android app for residential societies: residents register with phone verification, then see a bulletin board, upcoming events and meetings, society services, and their profile.',
+    // confirm: the previous site listed MSSQL, but the repository has no database code.
+    stack: ['Android', 'Java', 'Material Design'],
+    repo: 'https://github.com/dakshgoti14/Scube-Smart-Society-Management-System-',
+  },
+  {
+    name: 'Social Distance Detector',
+    // confirm: the repository is empty, so this comes from the title and the previous site's stack.
+    summary: 'Hackathon project that detects people in camera footage and flags when they stand closer than a safe distance.',
+    stack: ['Python', 'OpenCV', 'YOLOv3', 'scikit-learn'],
+    repo: null,
+  },
+  {
+    name: 'Kido Learn',
+    // confirm: no public repository; add what the app does.
+    summary: 'A mobile app built with Flutter, backed by Firebase.',
+    stack: ['Flutter', 'Dart', 'Firebase'],
+    repo: null,
+  },
+  {
+    name: 'Ad Banner Rent',
+    // confirm: no public repository; add what the app does.
+    summary: 'A mobile app built with Flutter, backed by Firebase and AWS.',
+    stack: ['Flutter', 'Dart', 'Firebase', 'AWS'],
+    repo: null,
+  },
 ];
 
 // Public repositories shown under "Building in public". Summaries and stacks come from each
@@ -496,7 +594,6 @@ export const openSource = [
     summary: 'An integration layer for AI agents on apps with no API: an LLM discovers a task once by driving a browser, records it as a typed capability, then replays it deterministically with zero LLM calls.',
     stat: 'LLM discovery once → deterministic replay, verified checkpoints',
     stack: ['Python', 'Playwright', 'Google Gemini', 'FastAPI', 'Docker'],
-    hue: '#2dd4bf',
   },
   {
     repo: 'Backend-Task-Orchestration-System',
@@ -504,15 +601,39 @@ export const openSource = [
     summary: 'A distributed job scheduler for fault-tolerant background work: priority queues, cron scheduling, job dependencies, retries with dead-letter queues, and horizontally scaled workers.',
     stat: 'Priority + cron + dependency resolution across worker nodes',
     stack: ['TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'BullMQ', 'GraphQL'],
-    hue: '#34d399',
   },
 ];
 
+// Each principle is paired with a real decision from a case study (see the linked page for details).
 export const principles = [
-  { title: 'Scalability', icon: 'trending', body: 'Design systems that keep performing as traffic, users, and data volumes grow.' },
-  { title: 'Reliability', icon: 'shield', body: 'Build with testing, observability, failure handling, and operational readiness in mind.' },
-  { title: 'Performance', icon: 'gauge', body: 'Profile bottlenecks and optimize APIs, data access, caching, and asynchronous workloads.' },
-  { title: 'Product thinking', icon: 'target', body: 'Build technology around real user and business problems, not technology for its own sake.' },
+  {
+    title: 'Scalability',
+    icon: 'trending',
+    body: 'Design systems that keep performing as traffic, users, and data volumes grow.',
+    example: 'OrderStream moves orders between services on fault-tolerant Kafka streams, processing 200K+ a day.',
+    ref: 'orderstream',
+  },
+  {
+    title: 'Reliability',
+    icon: 'shield',
+    body: 'Build with failure handling and operational readiness in mind.',
+    example: 'ContextFlow retries every agent call with exponential backoff and persists each step, so a transient model error doesn’t fail the document.',
+    ref: 'contextflow',
+  },
+  {
+    title: 'Performance',
+    icon: 'gauge',
+    body: 'Measure first, then optimize the path that matters.',
+    example: 'VectorForgeDB ships a benchmark harness; in its README run, HNSW answers in ~4ms P95 versus ~120ms for exact search.',
+    ref: 'vectorforgedb',
+  },
+  {
+    title: 'Product thinking',
+    icon: 'target',
+    body: 'Build around real user problems, not technology for its own sake.',
+    example: 'ContextFlow flags low-confidence extractions for human review instead of silently trusting the model.',
+    ref: 'contextflow',
+  },
 ];
 
 export const skills = [
@@ -549,22 +670,13 @@ export const certifications = [
   { name: 'Artificial Intelligence', issuer: null, kind: 'Certificate', url: 'https://drive.google.com/file/d/11S3hx4hhSikuAXOkYm94BUxg5OiYKxbN/view?usp=drive_link' },
 ];
 
-export const sections = [
-  { id: 'about', label: 'About' },
-  { id: 'what-i-build', label: 'What I build' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'engineering', label: 'Engineering principles' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'education', label: 'Education & certifications' },
-  { id: 'github', label: 'Open source' },
-  { id: 'contact', label: 'Contact' },
-];
-
-export const nav = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'contact', label: 'Contact' },
+// Site pages, in menu order. `path` is relative to the site root ("" is the homepage); each inner page
+// is a directory with an index.html, so URLs read /about/, /experience/, and so on.
+export const pages = [
+  { key: 'home', path: '', label: 'Home' },
+  { key: 'about', path: 'about/', label: 'About' },
+  { key: 'experience', path: 'experience/', label: 'Experience' },
+  { key: 'projects', path: 'projects/', label: 'Projects' },
+  { key: 'education', path: 'education/', label: 'Education' },
+  { key: 'contact', path: 'contact/', label: 'Contact' },
 ];

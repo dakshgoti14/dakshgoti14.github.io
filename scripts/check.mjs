@@ -6,10 +6,11 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join, normalize, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { projects } from '../content/site.mjs';
+import { projects, pages as sitePages } from '../content/site.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const pages = ['index.html', ...projects.map((p) => `projects/${p.slug}.html`)];
+// Every generated page: the menu pages (directories with an index.html), the case studies, and the 404.
+const pages = [...sitePages.map((p) => `${p.path}index.html`), ...projects.map((p) => `projects/${p.slug}.html`), '404.html'];
 
 const PRIVATE = [/05 June 2002/i, /Garford/i, /Unit 079/i, /562-386-4548/, /student\.csulb\.edu/i, /90815/];
 
@@ -43,7 +44,14 @@ for (const page of pages) {
   for (const [, attr, url] of html.matchAll(/\s(href|src)="([^"]+)"/g)) {
     if (/^(https?:|mailto:|tel:|data:)|^\/\//.test(url)) continue;
     const [path, hash] = url.split('#');
-    const target = path ? normalize(join(dirname(file), path.split('?')[0])) : file;
+    // Root-absolute URLs (used by 404.html) resolve against the site root; a path ending in "/" (or ".")
+    // is a directory, which the host serves from its index.html.
+    const clean = path.split('?')[0];
+    const resolved = !path ? file
+      : clean.startsWith('/') ? join(root, clean)
+      : normalize(join(dirname(file), clean));
+    const isDir = clean === '.' || clean.endsWith('/');
+    const target = !path ? file : isDir ? join(resolved, 'index.html') : resolved;
     if (!target.startsWith(root)) { fail(page, `${attr} escapes the site: ${url}`); continue; }
     if (!existsSync(target)) { fail(page, `broken ${attr}: ${url}`); continue; }
     if (hash && target.endsWith('.html') && !idsOf(target).has(hash)) {

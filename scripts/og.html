@@ -1,56 +1,43 @@
 <!DOCTYPE html>
-<!-- Social preview template. Rendered to assets/img/og-image.png by `npm run assets`. -->
+<!-- Social preview template. Rendered to assets/img/og-image.png by `npm run assets` (fonts and portrait are local files). -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;800&family=Geist+Mono:wght@400;500&display=block">
+<title>Daksh Goti — social preview</title>
 <style>
+  @font-face { font-family: 'Space Grotesk'; font-weight: 400 700; src: url(../assets/fonts/space-grotesk-latin.woff2) format('woff2'); }
+  @font-face { font-family: 'Geist Mono'; font-weight: 400 500; src: url(../assets/fonts/geist-mono-latin.woff2) format('woff2'); }
   * { margin: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; }
   body {
-    background: #060a12; color: #e8edf5; font-family: 'Geist', system-ui, sans-serif;
-    padding: 80px 88px; position: relative; overflow: hidden;
-    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden; background: #16191e; color: #f3f5f8;
+    font-family: 'Space Grotesk', system-ui, sans-serif; padding: 60px 72px;
   }
-  body::before {
-    content: ''; position: absolute; inset: 0;
-    background-image:
-      linear-gradient(to right, rgba(148,178,224,.07) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148,178,224,.07) 1px, transparent 1px);
-    background-size: 56px 56px;
-    -webkit-mask-image: radial-gradient(ellipse 60% 70% at 85% 30%, #000 10%, transparent 70%);
+  .copy { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 16px; font-size: 28px; font-weight: 700; letter-spacing: -.015em; }
+  .mark { width: 52px; height: 52px; border-radius: 13px; display: grid; place-items: center; background: #2563eb; color: #fff; font-size: 20px; letter-spacing: 0; }
+  .rule { display: block; width: 120px; height: 7px; background: #f3f5f8; margin-bottom: 30px; }
+  h1 { font-size: 74px; line-height: 1.04; letter-spacing: -.035em; font-weight: 700; }
+  p { margin-top: 24px; font-size: 28px; line-height: 1.35; color: #c2c9d3; max-width: 560px; }
+  .foot { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .foot b { color: #6ea0ff; }
+  .foot span { color: #8f99a8; font-weight: 500; letter-spacing: .02em; text-transform: none; }
+  .portrait {
+    position: absolute; right: 10px; bottom: -170px; height: 760px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 92%);
   }
-  body::after {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(620px 380px at 10% 0%, rgba(56,140,255,.28), transparent 70%), radial-gradient(560px 360px at 95% 90%, rgba(52,211,153,.18), transparent 70%);
-  }
-  .top { position: relative; z-index: 1; display: flex; align-items: center; gap: 16px; }
-  .mark {
-    width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center;
-    font-family: 'Geist Mono', monospace; font-size: 18px; font-weight: 500;
-    color: #03121f; background: linear-gradient(100deg, #5ab8ff, #38d6c4 55%, #34d399);
-  }
-  .eyebrow { font-family: 'Geist Mono', monospace; font-size: 18px; letter-spacing: .12em; color: #8b8b94; text-transform: uppercase; }
-  .eyebrow b { color: #5ab8ff; font-weight: 400; }
-  .main { position: relative; z-index: 1; }
-  h1 { font-size: 96px; font-weight: 800; letter-spacing: -.05em; line-height: 1; background: linear-gradient(100deg, #f4f8ff 0%, #a8dcff 40%, #5ad8c8 75%, #34d399 100%); -webkit-background-clip: text; color: transparent; padding-bottom: 6px; }
-  p { margin-top: 22px; font-size: 40px; letter-spacing: -.025em; line-height: 1.2; color: #8b8b94; max-width: 900px; }
-  p em { font-style: normal; color: #ededef; }
-  .foot { position: relative; z-index: 1; display: flex; justify-content: space-between; font-family: 'Geist Mono', monospace; font-size: 20px; color: #8b8b94; }
 </style>
 </head>
 <body>
-  <div class="top">
-    <div class="mark">DG</div>
-    <div class="eyebrow"><b>Software Engineer</b> · AI · Backend · Full Stack</div>
+  <div class="copy">
+    <div class="brand"><span class="mark">DG</span>Daksh Goti</div>
+    <div>
+      <span class="rule"></span>
+      <h1>I’m Daksh Goti,<br>a Software<br>Engineer</h1>
+      <p>I build scalable systems and AI-powered products.</p>
+    </div>
+    <div class="foot"><b>/</b> Portfolio <span>dakshgoti14.github.io</span></div>
   </div>
-  <div class="main">
-    <h1>Daksh Goti</h1>
-    <p>I build <em>scalable systems</em> and <em>AI-powered products</em>.</p>
-  </div>
-  <div class="foot">
-    <span>dakshgoti14.github.io</span>
-    <span>Python · Java · React · AWS · GenAI</span>
-  </div>
+  <img class="portrait" src="../assets/img/portrait-cutout-1040.webp" alt="">
 </body>
 </html>

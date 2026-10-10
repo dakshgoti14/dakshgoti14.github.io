@@ -4,7 +4,14 @@
   window.__siteReady = true;
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var finePointer = window.matchMedia('(pointer: fine)').matches;
+
+  // ---- Old single-page links (/#projects, /#contact, …) now point at their own pages -----
+  var MOVED = { projects: 'projects/', github: 'projects/#github', engineering: 'about/#engineering', skills: 'about/#skills', education: 'education/', contact: 'contact/' };
+  var oldHash = location.hash.slice(1);
+  if (oldHash && MOVED[oldHash] && document.querySelector('.hero') && !document.getElementById(oldHash)) {
+    location.replace(MOVED[oldHash]);
+    return;
+  }
   var hasIO = 'IntersectionObserver' in window;
   var nav = document.querySelector('[data-nav]');
   var toggle = document.querySelector('[data-nav-toggle]');
@@ -50,6 +57,7 @@
   function setMenu(open) {
     if (!nav || !toggle) return;
     nav.classList.toggle('is-open', open);
+    document.documentElement.classList.toggle('menu-open', open);   // lock page scroll behind the sheet
     toggle.setAttribute('aria-expanded', String(open));
   }
   if (toggle) {
@@ -72,7 +80,7 @@
     nav.addEventListener('focusout', function (e) {
       if (e.relatedTarget && !nav.contains(e.relatedTarget)) setMenu(false);
     });
-    window.matchMedia('(min-width: 901px)').addEventListener('change', function (mq) {
+    window.matchMedia('(min-width: 1101px)').addEventListener('change', function (mq) {
       if (mq.matches) setMenu(false);
     });
   }
@@ -161,10 +169,40 @@
     dialog.addEventListener('click', function (e) { if (e.target === dialog) close(); });
   }
 
+  // ---- Message form: compose the email in the visitor's own mail app -----------------
+  // There is no backend; without JavaScript the form falls back to a plain mailto submission
+  // (with the browser's own validation). With it, errors appear inline beside the field.
+  document.querySelectorAll('form[data-mailto]').forEach(function (form) {
+    form.setAttribute('novalidate', '');
+    var required = Array.prototype.slice.call(form.querySelectorAll('[required]'));
+    var showError = function (field, show) {
+      var message = document.getElementById(field.id + '-error');
+      if (!message) return;
+      message.hidden = !show;
+      if (show) { field.setAttribute('aria-invalid', 'true'); field.setAttribute('aria-describedby', message.id); }
+      else { field.removeAttribute('aria-invalid'); field.removeAttribute('aria-describedby'); }
+    };
+    required.forEach(function (field) {
+      field.addEventListener('input', function () { if (field.value.trim()) showError(field, false); });
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var missing = required.filter(function (field) { return !field.value.trim(); });
+      required.forEach(function (field) { showError(field, missing.indexOf(field) !== -1); });
+      if (missing.length) { missing[0].focus(); return; }
+      var name = form.elements.name.value.trim();
+      var subject = form.elements.subject.value.trim() || 'Hello from ' + name;
+      var body = form.elements.message.value.trim() + '\n\n— ' + name;
+      toast('Opening your email app…');
+      window.location.href = 'mailto:' + form.getAttribute('data-mailto') +
+        '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  });
+
   // ---- Clickable cards ---------------------------------------------------------------
   // A click anywhere on a card follows its data-card-href. Real links and buttons inside keep their
   // own behaviour; selecting text never navigates; Cmd/Ctrl/Shift-click and middle-click open a new tab.
-  // (Not a CSS stretched link: the GSAP transforms and glow layers would trap its overlay.)
+  // (Not a CSS stretched link: the entrance transforms would trap its overlay.)
   document.querySelectorAll('[data-card-href]').forEach(function (card) {
     var href = card.getAttribute('data-card-href');
     var external = card.hasAttribute('data-card-external');
@@ -186,7 +224,7 @@
   // Adapted from Magic UI's Animated Beam (via 21st.dev): an SVG overlay inside each diagram draws a
   // faint path plus a travelling glow between connected nodes; parent→fan edges become smooth curves.
   // Positions come from layout offsets (not getBoundingClientRect) so beams stay attached while the
-  // diagram is transformed (3D tilt, parallax). The CSS connectors remain as the no-JS fallback.
+  // diagram is transformed (entrance animations). The CSS connectors remain as the no-JS fallback.
   var SVGNS = 'http://www.w3.org/2000/svg';
   var offsetIn = function (el, root) {
     var x = 0, y = 0;
@@ -241,24 +279,44 @@
     };
     draw();
     arch.classList.add('has-beams');
+
+    // Hover a node: light its path back to the top tier plus its direct children; dim the rest.
+    var parentOf = new Map(), childrenOf = new Map();
+    edges.forEach(function (e) {
+      parentOf.set(e.to, e);
+      if (!childrenOf.has(e.from)) childrenOf.set(e.from, []);
+      childrenOf.get(e.from).push(e);
+    });
+    var clearTrace = function () {
+      arch.classList.remove('is-tracing');
+      arch.querySelectorAll('.is-lit, .is-hot').forEach(function (el) { el.classList.remove('is-lit', 'is-hot'); });
+    };
+    var trace = function (node) {
+      clearTrace();
+      arch.classList.add('is-tracing');
+      node.classList.add('is-lit');
+      var light = function (e) { e.from.classList.add('is-lit'); e.to.classList.add('is-lit'); e.paths.forEach(function (p) { p.classList.add('is-hot'); }); };
+      for (var up = parentOf.get(node); up; up = parentOf.get(up.from)) light(up);
+      (childrenOf.get(node) || []).forEach(light);
+    };
+    arch.querySelectorAll('.arch-node').forEach(function (node) {
+      node.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'touch') trace(node); });
+    });
+    arch.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch') clearTrace(); });
+    // Touch: tap a node to trace it, tap anywhere else to clear. (Inside project cards a tap opens
+    // the case study instead, so tracing is mouse-only there.)
+    if (!arch.closest('[data-card-href]')) {
+      arch.addEventListener('click', function (e) {
+        var node = e.target.closest('.arch-node');
+        if (node) trace(node);
+      });
+      document.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'touch' && !arch.contains(e.target)) clearTrace();
+      });
+    }
     if ('ResizeObserver' in window) new ResizeObserver(draw).observe(arch);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
   });
-
-  // ---- Spotlight: a soft glow that follows the pointer inside cards -------------
-  if (finePointer && !reduced) {
-    var frame = null;
-    document.addEventListener('pointermove', function (e) {
-      var card = e.target.closest && e.target.closest('[data-spotlight]');
-      if (!card || frame) return;
-      frame = requestAnimationFrame(function () {
-        var r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-        frame = null;
-      });
-    }, { passive: true });
-  }
 
   if (!hasIO) {
     document.documentElement.classList.remove('js');
@@ -278,25 +336,6 @@
 
   // A section is "current" when it crosses a band just above the middle of the viewport.
   var band = { rootMargin: '-40% 0px -55% 0px' };
-
-  // ---- Active section indicator ------------------------------------------
-  // Sections without their own nav item highlight their parent (data-nav-group); the hero clears it.
-  var links = document.querySelectorAll('[data-nav-link]');
-  var tracked = document.querySelectorAll('main section[id]');
-  if (links.length && tracked.length) {
-    var setCurrent = function (id) {
-      links.forEach(function (a) {
-        if (a.getAttribute('data-nav-link') === id) a.setAttribute('aria-current', 'true');
-        else a.removeAttribute('aria-current');
-      });
-    };
-    var activeObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setCurrent(entry.target.getAttribute('data-nav-group') || entry.target.id);
-      });
-    }, band);
-    tracked.forEach(function (section) { activeObserver.observe(section); });
-  }
 
   // ---- Case study table of contents -----------------------------------------
   var tocLinks = document.querySelectorAll('[data-toc]');
@@ -323,16 +362,17 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         countObserver.unobserve(entry.target);
-        var el = entry.target;
-        var m = /^(\D*)(\d+(?:\.\d+)?)(.*)$/.exec(el.textContent);
-        if (!m) return;
-        var target = parseFloat(m[2]);
-        var decimals = (m[2].split('.')[1] || '').length;
+        // Only the number counts (units and prefixes are separate spans, so they keep their styling).
+        var num = entry.target.querySelector('[data-num]');
+        if (!num) return;
+        var value = num.textContent;
+        var target = parseFloat(value);
+        var decimals = (value.split('.')[1] || '').length;
         var start = performance.now();
         var step = function (now) {
-          var t = Math.min(1, (now - start) / 900);
-          var eased = 1 - Math.pow(1 - t, 3);
-          el.textContent = m[1] + (target * eased).toFixed(decimals) + m[3];
+          var t = Math.min(1, (now - start) / 1200);
+          var eased = 1 - Math.pow(1 - t, 4);
+          num.textContent = t < 1 ? (target * eased).toFixed(decimals) : value;
           if (t < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);
@@ -356,11 +396,4 @@
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
   reveals.forEach(function (el) { revealObserver.observe(el); });
-
-  // Opening <details> reveals its contents immediately.
-  document.querySelectorAll('details').forEach(function (d) {
-    d.addEventListener('toggle', function () {
-      d.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-in'); });
-    });
-  });
 })();
